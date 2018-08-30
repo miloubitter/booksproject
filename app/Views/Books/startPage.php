@@ -30,6 +30,10 @@
     </div>
 
         <h2>Top 10 books</h2>
+    <?php
+//    Foreach loop maken kijkend naar de meeste votes. Dan de top 10 van die votes loopen zoals hieronder.
+    ?>
+
         <ol>
             <li> Boek 1</li>
             <li> Boek 2</li>
