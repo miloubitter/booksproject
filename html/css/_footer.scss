@@ -1,0 +1,15 @@
+@import "colors";
+
+.footer{
+  margin-top: 50px;
+  font-size: 0.75em;
+  color: #555555;
+  border-top: solid 1px $bc_blue;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.footerAfbeelding {
+  width: 50px;
+  height: auto;
+}
