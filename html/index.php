@@ -12,17 +12,8 @@ session_start();
 $dotenv = new DotEnv(__DIR__ . '/../');
 $dotenv->load();
 
-function handleExceptions(Throwable $oException)
-{
-    LogManager::log('alert','Unhandled exception: ' . $oException->getMessage() . ' - ' . $oException->getTraceAsString());
-}
-set_exception_handler('handleExceptions');
-
-function handleErrors($iErrorNumber, $sError, $sErrorFile, $iErrorLine)
-{
-    throw new ErrorException($sError, $iErrorNumber, 0, $sErrorFile, $iErrorLine);
-}
-set_error_handler('handleErrors');
+set_exception_handler('Infrastructure\ErrorHandler::handleExceptions');
+set_error_handler('Infrastructure\ErrorHandler::handleErrors');
 
 function view($view, $viewModel){
     include __DIR__ . '/../app/Views/layout.php';

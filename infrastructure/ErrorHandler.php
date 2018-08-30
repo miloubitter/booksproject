@@ -10,6 +10,7 @@ class ErrorHandler {
     public static function handleExceptions(Throwable $oException) : void
     {
         LogManager::log('alert','Unhandled exception: ' . $oException->getMessage() . ' - ' . $oException->getTraceAsString());
+        http_response_code(500);
     }
 
     public static function handleErrors($iErrorNumber, $sError, $sErrorFile, $iErrorLine) : void
