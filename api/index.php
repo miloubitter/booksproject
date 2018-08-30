@@ -25,6 +25,10 @@ $method = $_SERVER['REQUEST_METHOD'];
     } else if ($route === 'books' && $method === 'POST') {
         $bookController = new BookController();
         $bookController->createBook();
+
+    }else if ($route === 'update' && $method === 'POST') {
+        $bookController = new BookController();
+        $bookController->updateBook();
     }
 
     else if ($route === 'votes')

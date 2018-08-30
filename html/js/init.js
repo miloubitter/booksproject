@@ -7,6 +7,10 @@ const createBook = (book) =>{
   return $.post(env.api + '?route=books', JSON.stringify(book));
 };
 
+const updateBook = (book) => {
+    return $.post(env.api + '?route=update', JSON.stringify(book));
+};
+
 //DOM helper functions
 const appendSuccessMessage = (message, elementSelector) => {
     const successAlert = $(`<div class="alert alert-success alert-dismissible fade show" role="alert">
