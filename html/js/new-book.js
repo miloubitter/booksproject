@@ -50,51 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
        }
     });
 
-    const fieldValidation = (event) => {
-        const inputField = event.target;
-
-        if (!inputField.checkValidity()) {
-            addErrorMessageForElement(inputField);
-        }else {
-            clearErrorMessageForElement(inputField);
-        }
-    };
     for(let i = 0; i < inputFields.length; i++) {
         inputFields[i].addEventListener('blur', fieldValidation);
     }
-
-    const addErrorMessageForElement = (element) => {
-        clearErrorMessageForElement(element);
-
-        const parent = element.parentNode;
-
-        const errorMessage = getErrorMessageForElement(element);
-
-        const errorDiv = document.createElement('div');
-        errorDiv.className = 'error-message';
-        errorDiv.textContent = errorMessage;
-
-        parent.appendChild(errorDiv);
-    };
-
-    const clearErrorMessageForElement = (element) => {
-        const parent = element.parentNode;
-
-        const errorDiv = parent.querySelector('div.error-message');
-        if (errorDiv) {
-            parent.removeChild(errorDiv);
-        }
-    };
-
-    const getErrorMessageForElement = (element) => {
-        if (element.validity.customError) {
-            return element.validationMessage;
-        } else if (element.validity.valueMissing) {
-            return 'Dit veld is verplicht';
-        } else {
-            return 'Dit veld is onjuist gevuld';
-        }
-    };
-
-
 });

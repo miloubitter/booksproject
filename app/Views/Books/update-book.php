@@ -1,29 +1,29 @@
 <h1><?php echo $viewModel['pageTitle']?></h1>
 <div class="container">
-    <form action="?route=edit&id=<?php $viewModel['book']['id']?>" method="post">
+    <form novalidate id="updateBookForm">
         <div class="form-row">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="<?php echo $viewModel['book']['title']?>"/>
+        <input type="text" name="title" id="title" value="<?php echo $viewModel['book']['title']?>" required/>
         </div>
 
         <div class="form-row">
         <label for="author_id">Author</label>
-        <input type="text" name="author_id" id="author_id" value="<?php echo $viewModel['book']['author_id']?>"/>
+        <input type="text" name="author_id" id="author_id" value="<?php echo $viewModel['book']['author_id']?>" required/>
         </div>
 
         <div class="form-row">
         <label for="category_id">Category</label>
-        <input type="text" name="category_id" id="category_id" value="<?php echo $viewModel['book']['category_id']?>"/>
+        <input type="text" name="category_id" id="category_id" value="<?php echo $viewModel['book']['category_id']?>" required/>
         </div>
 
         <div class="form-row">
         <label for="isbn">ISBN</label>
-        <input type="text" name="isbn" id="isbn" value="<?php echo $viewModel['book']['isbn']?>" />
+        <input type="text" name="isbn" id="isbn" value="<?php echo $viewModel['book']['isbn']?>" required/>
         </div>
 
         <div class="form-row">
         <label for="price">Price</label>
-        <input type="text" name="price" id="price" value="<?php echo $viewModel['book']['price']?>" />
+        <input type="text" name="price" id="price" value="<?php echo $viewModel['book']['price']?>" required />
         </div>
 
         <div class="form-description">
@@ -35,5 +35,10 @@
             <input class="btn btn-info" type="submit" value="Opslaan"/>
         </div>
     </form>
+
+    <script>
+        let bookId = <?php echo $viewModel['book']['id']?>;
+    </script>
+    <script src="js/update-book.js"></script>
 </div>
 

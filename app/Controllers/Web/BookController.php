@@ -50,7 +50,7 @@ class BookController extends BaseController
 
         $imagePath = '';
         if (file_exists(__DIR__ . '/../../../html/images/' . $id . '.jpg')) {
-            $imagePath = 'afbeeldingen/' . $id . '.jpg';
+            $imagePath = 'images/' . $id . '.jpg';
         }
 
         $viewModel = [
@@ -73,8 +73,9 @@ class BookController extends BaseController
             'book' => $book->one($id),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
+            'profile' => Authentication::getProfile(),
         ];
+
 
         $this->renderWebView('/Books/update-book', $viewModel);
     }

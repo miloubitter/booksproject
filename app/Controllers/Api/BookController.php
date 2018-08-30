@@ -35,6 +35,7 @@ class BookController extends BaseController
         $this->renderJson(201, $bookId);
     }
     public function updateBook () {
+        $id = $_GET['id'] ?? null;
         $bookModel = new Book();
 
         $book = json_decode(file_get_contents("php://input"));
@@ -49,11 +50,9 @@ class BookController extends BaseController
             'price' => $book->price,
         ];
 
-        $id = $book->id;
-
         $bookId = $bookModel->save($fields, $id);
 
-        $this->renderJson(201, $bookId);
+        $this->renderJson(201);
 
     }
 }

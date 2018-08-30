@@ -24,16 +24,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 category_id: form.category_id.value,
                 isbn: form.isbn.value,
                 price: form.price.value,
-                description: form.description.value,
-                id: form.id.value
+                description: form.description.value
             };
 
-            updateBook(book)
+            updateBook(bookId,book)
                 .done((data, text) => {
                     form.reset();
 
                     //appendSuccesMessage('Book successfully updated!','.message-container');
-                    window.location.replace("?route=show&id=" + JSON.parse(data));
+                    window.location.replace("?route=show&id=" + JSON.parse(bookId));
                 })
                 .fail((request, status, error) => {
 
@@ -56,6 +55,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     for (let i = 0; i < inputFields.length; i++) {
         inputFields[i].addEventListener('blur', fieldValidation);
-
     }
 });

@@ -7,8 +7,51 @@ const createBook = (book) =>{
   return $.post(env.api + '?route=books', JSON.stringify(book));
 };
 
-const updateBook = (book) => {
-    return $.post(env.api + '?route=update', JSON.stringify(book));
+const updateBook = (bookId,book) => {
+    return $.post(env.api + '?route=update&id=' + bookId, JSON.stringify(book));};
+
+//FormValidation
+const fieldValidation = (event) => {
+    const inputField = event.target;
+
+    if (!inputField.checkValidity()) {
+        addErrorMessageForElement(inputField);
+    }else {
+        clearErrorMessageForElement(inputField);
+    }
+};
+
+const addErrorMessageForElement = (element) => {
+    clearErrorMessageForElement(element);
+
+    const parent = element.parentNode;
+
+    const errorMessage = getErrorMessageForElement(element);
+
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'error-message';
+    errorDiv.textContent = errorMessage;
+
+    parent.appendChild(errorDiv);
+};
+
+const clearErrorMessageForElement = (element) => {
+    const parent = element.parentNode;
+
+    const errorDiv = parent.querySelector('div.error-message');
+    if (errorDiv) {
+        parent.removeChild(errorDiv);
+    }
+};
+
+const getErrorMessageForElement = (element) => {
+    if (element.validity.customError) {
+        return element.validationMessage;
+    } else if (element.validity.valueMissing) {
+        return 'Dit veld is verplicht';
+    } else {
+        return 'Dit veld is onjuist gevuld';
+    }
 };
 
 //DOM helper functions
@@ -68,7 +111,7 @@ function getVotes(id){
 $( document ).ready(function() {
     voteElement = $(".votes");
     if (voteElement){
-        bookId = $(voteElement).find(".vote-count").data("id");
+        let bookId = $(voteElement).find(".vote-count").data("id");
         if (bookId>0){
             //setInterval("getVotes(" + bookId +")",1000);
             $(voteElement).find(".up-vote").click(function (){
