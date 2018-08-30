@@ -9,13 +9,13 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="author_name">Author</label>
-                    <input type="text" name="author_name" id="author_name" class="form-control" required/>
+                    <label for="author_id">Author</label>
+                    <input type="number" name="author_id" id="author_id" class="form-control" required/>
                 </div>
 
                 <div class="form-group">
-                    <label for="category_name">Category</label>
-                    <input type="text" name="category_name" id="category_name" class="form-control" required/>
+                    <label for="category_id">Category</label>
+                    <input type="number" name="category_id" id="category_id" class="form-control" required/>
                 </div>
 
                 <div class="form-group">

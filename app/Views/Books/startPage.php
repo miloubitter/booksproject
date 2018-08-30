@@ -1,21 +1,25 @@
 <div class="slides">
     <div class="slide ">
         <div>
-            <img src="img/banner3.jpg" alt="" />
+            <img src="img/Banner3.jpg" alt="" />
         </div>
     </div><!--/Slide 1-->
 
-    <div class="slide ">
-        <div>
-            <img src="img/banner1.png" alt="" />
-        </div>
-    </div><!--/Slide 2-->
-
     <div class="slide">
         <div>
-            <img src="img/banner2.jpg" alt="" />
+            <img src="img/Banner2.jpg" alt="" />
         </div>
     </div><!--/Slide 3-->
+    <div class="slide">
+        <div>
+            <img src="img/Banner5.jpg" alt="" />
+        </div>
+    </div><!--/Slide 4-->
+    <div class="slide">
+        <div>
+            <img src="img/Banner6.jpg" alt="" />
+        </div>
+    </div><!--/Slide 5-->
 
 </div>
 

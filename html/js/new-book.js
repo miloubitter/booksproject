@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const book = {
               title: form.title.value,
-              author_name: form.author_name.value,
-              category_name: form.category_name.value,
+              author_id: form.author_id.value,
+              category_id: form.category_id.value,
               isbn: form.isbn.value,
               price: form.price.value,
               description: form.description.value,
