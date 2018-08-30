@@ -52,11 +52,11 @@ $(document).ready(() => {
                 titleCol.textContent = books[i].title;
 
                 const authorCol = document.createElement('td');
-                authorCol.textContent = books[i].author_id;
+                authorCol.textContent = books[i].author_name;
                 authorCol.setAttribute('class','d-none d-sm-table-cell');
 
                 const categoryCol = document.createElement('td');
-                categoryCol.textContent = books[i].category_id;
+                categoryCol.textContent = books[i].category_name;
                 categoryCol.setAttribute('class','d-none d-sm-table-cell');
 
                 const isbnCol = document.createElement('td');
