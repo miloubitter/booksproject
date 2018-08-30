@@ -27,11 +27,24 @@ class Book extends Database
     public function all($where = [], $group_by = [], $order_by = [], $start_row = [], $limit = 1)
     {
             $sql = "SELECT
-                    *
+                    books.id as id,
+                    books.category_id as category_id,
+                    books.author_id as author_id,
+                    books.title as title,
+                    books.description as description,
+                    books.price as price,
+                    books.isbn as isbn,
+                    books.created_at as created_at,
+                    books.updated_at as updated_at,
+                    books.votes as votes,
+                    authors.name as author_name,
+                    categories.name as category_name
                 FROM
-                    books";
+                    books
+                left join authors on (authors.id = books.author_id)
+                left join categories on (categories.id = books.category_id)";
 
-            $this->getAll($sql);
+           return $this->getAll($sql);
     }
 
     public function one($id = 0)
