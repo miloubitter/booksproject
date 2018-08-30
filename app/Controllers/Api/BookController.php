@@ -22,8 +22,8 @@ class BookController extends BaseController
         $book = json_decode(file_get_contents("php://input"));
 
         $fields =[
-            'category_id'=> $book->category_id,
-            'author_id' => $book->author_id,
+            'category_name'=> $book->category_name,
+            'author_name' => $book->author_name,
             'title' => $book->title,
             'isbn' => $book->isbn,
             'description' => $book->description,
