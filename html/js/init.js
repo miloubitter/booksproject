@@ -15,6 +15,10 @@ const deleteBook = (bookId) => {
     return $.post(env.api + '?route=delete&id=' + bookId);
 };
 
+const getOneBook = (bookId) => {
+    return $.get(env.api + '?route=book&id=' + bookId);
+};
+
 //FormValidation
 const fieldValidation = (event) => {
     const inputField = event.target;

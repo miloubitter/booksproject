@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="titleText col">
             <h1><?php echo $viewModel['book']['title']?></h1>
                 <div class="votes">
                     <div class="vote-count" data-id="<?php echo $viewModel['book']['id']?>"><?php echo $viewModel['book']['votes']?></div>
@@ -30,20 +30,30 @@
                     </div>
                     <div class="col-md-6">
                         <div class="clearfix bg-light p-3 rounded">
-                        <p><b>Author</b><br />
-                            <?php echo $viewModel['book']['author_name']; ?></p>
+                            <div class="authorText">
+                                <b>Author</b><br />
+                                <!--       Javascript created content         -->
+                            </div>
 
-                        <p><b>Category</b><br />
-                            <?php echo $viewModel['book']['category_name']; ?></p>
+                            <div class="categoryText">
+                                <b>Category</b><br />
+                                <!--       Javascript created content         -->
+                            </div>
 
-                        <p><b>ISBN</b><br />
-                            <?php echo $viewModel['book']['isbn']; ?></p>
+                            <div class="isbnText">
+                                <b>ISBN</b><br />
+                                <!--       Javascript created content         -->
+                            </div>
 
-                        <p><b>Price</b><br />
-                            &euro; <?php echo $viewModel['book']['price']; ?></p>
+                            <div class="priceText">
+                                <b>Price</b><br />
+                                <!--       Javascript created content         -->
+                            </div>
 
-                        <p><b>Description</b><br />
-                            <?php echo $viewModel['book']['description']; ?></p>
+                            <div class="descriptionText">
+                                <b>Description</b><br />
+    <!--                            --><?php //echo $viewModel['book']['description']; ?><!--</p>-->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -57,7 +67,6 @@
         </div>
     </div>
 </div>
-<script>
-    let bookId = <?php echo $viewModel['book']['id']?>;
-</script>
+<script>let bookId = <?php echo $viewModel['book']['id']?>;</script>
+<script src="js/details-book.js"></script>
 <script src="js/delete-book.js"></script>

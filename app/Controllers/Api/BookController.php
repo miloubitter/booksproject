@@ -16,6 +16,15 @@ class BookController extends BaseController
        $this->renderJson(200, $books);
     }
 
+    public function getOneBook() {
+        $id = $_GET['id'] ?? null;
+        $bookModel = new Book();
+
+        $book = $bookModel->one($id);
+
+        $this->renderJson(200, $book);
+    }
+
     public function createBook(){
         $bookModel = new Book();
 

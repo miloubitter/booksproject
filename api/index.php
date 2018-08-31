@@ -22,6 +22,10 @@ $method = $_SERVER['REQUEST_METHOD'];
         $bookController = new BookController();
         $bookController->getBooks();
 
+    } else if ($route === 'book' && $method === 'GET') {
+        $bookController = new BookController();
+        $bookController->getOneBook();
+
     } else if ($route === 'books' && $method === 'POST') {
         $bookController = new BookController();
         $bookController->createBook();
