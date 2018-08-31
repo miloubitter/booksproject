@@ -2,16 +2,16 @@
     <div class="row">
         <div class="titleText col">
             <h1><?php echo $viewModel['book']['title']?></h1>
-                <div class="votes">
+            <!--  MOET NOG KOMEN !!!    Javascript created content         -->
+            <div class="votes">
                     <div class="vote-count" data-id="<?php echo $viewModel['book']['id']?>"><?php echo $viewModel['book']['votes']?></div>
                     <a class="up-vote" href="#"><i class="far fa-thumbs-up"></i></a>
                     <a class="down-vote" href="#"><i class="far fa-thumbs-down"></i></a>
                 </div>
 
+                <!-- Image show on page     -->
                 <div class="row">
-
                     <div class="col-md-6">
-
                         <?php if($viewModel['imagePath']) { ?>
 
                             <img class="mb-4 rounded" src="<?php echo $viewModel['imagePath']; ?>" width="350px" height="500px" />
@@ -19,7 +19,7 @@
                         <?php } ?>
 
                         <?php if ($viewModel['profile']) { ?>
-
+                            <!-- Image upload on page     -->
                             <form action="?route=upload-image&id=<?php echo $viewModel['book']['id'] ?>" enctype="multipart/form-data" method="post">
                                 <p><b>Select image file to upload</b></p>
                                 <p><input type="file" name="imageFile" id="imageFile" accept="image/*"/></p>
@@ -28,36 +28,38 @@
 
                         <?php } ?>
                     </div>
+                    <!-- Book details     -->
                     <div class="col-md-6">
                         <div class="clearfix bg-light p-3 rounded">
                             <div class="authorText">
                                 <b>Author</b><br />
-                                <!--       Javascript created content         -->
+                                <!--       Javascript created content (p)        -->
                             </div>
 
                             <div class="categoryText">
                                 <b>Category</b><br />
-                                <!--       Javascript created content         -->
+                                <!--       Javascript created content (p)        -->
                             </div>
 
                             <div class="isbnText">
                                 <b>ISBN</b><br />
-                                <!--       Javascript created content         -->
+                                <!--       Javascript created content (p)        -->
                             </div>
 
                             <div class="priceText">
                                 <b>Price</b><br />
-                                <!--       Javascript created content         -->
+                                <!--       Javascript created content (p)       -->
                             </div>
 
                             <div class="descriptionText">
                                 <b>Description</b><br />
-    <!--                            --><?php //echo $viewModel['book']['description']; ?><!--</p>-->
+                                <!--       Javascript created content (p)        -->
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="intro mt-3">
+            <!-- Buttons    -->
+            <div class="intro mt-3">
                     <button onclick="window.location = '?route=allbooks'"type="button" class="btn btn-secondary">Back</button>
                     <?php if($viewModel['profile']) { ?>
                     <button onclick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'"type="button" class="btn btn-info">Edit book</button>
