@@ -33,6 +33,9 @@
                         <p><b>Author</b><br />
                             <?php echo $viewModel['book']['author_id']; ?></p>
 
+                        <p><b>Category</b><br />
+                            <?php echo $viewModel['book']['category_id']; ?></p>
+
                         <p><b>ISBN</b><br />
                             <?php echo $viewModel['book']['isbn']; ?></p>
 
