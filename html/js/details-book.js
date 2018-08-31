@@ -32,7 +32,7 @@ $(document).ready(() => {
             priceText.appendChild(priceP);
             descriptionText.appendChild(descriptionP);
         })
-        .fail((request, status, error) =>
+            .fail((request, status, error) =>
         {
             console.log(request);
         });
