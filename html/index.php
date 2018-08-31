@@ -63,6 +63,12 @@ if($route == 'index') {
 }else if( $route == 'upload-image' &&  $method == 'POST') {
     $bookController = new BookController();
     $bookController->uploadImage($id);
+//}else if ($route == "upload-image" && $method == "GET") {
+//        $bookController = new BookController();
+//        $bookController->bookimage($id);
+//} else if ($route == "upload-image" && $method == "POST") {
+//        $bookController = new BookController();
+//        $bookController->uploadImage($id);
 
 
 }else if($route == 'login' && $method=='GET'){
