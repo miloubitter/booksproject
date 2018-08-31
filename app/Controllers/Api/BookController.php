@@ -55,4 +55,9 @@ class BookController extends BaseController
         $this->renderJson(201);
 
     }
+    public function deleteBook() {
+        $id = $_GET['id'] ?? null;
+        $bookModel = new Book();
+        $bookModel->delete($id);
+    }
 }

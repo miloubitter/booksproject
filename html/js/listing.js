@@ -78,4 +78,20 @@ $(document).ready(() => {
         {
             console.log(request);
         });
+
+    // // ***** Delete *****
+    // const deleteButton = document.getElementById('deleteButton');
+    //
+    // deleteButton.addEventListener('click', () => {
+    //     deleteBook(bookId)
+    //         .done((data, text) => {
+    //
+    //             appendSuccesMessage('Book successfully deleted!', '.message-container');
+    //             window.location = "?route=index";
+    //         })
+    //         .fail((request, status, error) => {
+    //
+    //             console.log(request)
+    //         });
+    // });
 });

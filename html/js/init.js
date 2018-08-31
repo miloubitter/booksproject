@@ -8,7 +8,12 @@ const createBook = (book) =>{
 };
 
 const updateBook = (bookId,book) => {
-    return $.post(env.api + '?route=update&id=' + bookId, JSON.stringify(book));};
+    return $.post(env.api + '?route=update&id=' + bookId, JSON.stringify(book));
+};
+
+const deleteBook = (bookId) => {
+    return $.post(env.api + '?route=delete&id=' + bookId);
+};
 
 //FormValidation
 const fieldValidation = (event) => {
