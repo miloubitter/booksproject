@@ -64,7 +64,7 @@ $(document).ready(() => {
                 isbnCol.setAttribute('class','d-none d-sm-table-cell');
 
                 const priceCol = document.createElement('td');
-                priceCol.textContent = books[i].price;
+                priceCol.textContent =books[i].price;
 
                 row.appendChild(titleCol);
                 row.appendChild(authorCol);
@@ -78,20 +78,4 @@ $(document).ready(() => {
         {
             console.log(request);
         });
-
-    // // ***** Delete *****
-    // const deleteButton = document.getElementById('deleteButton');
-    //
-    // deleteButton.addEventListener('click', () => {
-    //     deleteBook(bookId)
-    //         .done((data, text) => {
-    //
-    //             appendSuccesMessage('Book successfully deleted!', '.message-container');
-    //             window.location = "?route=index";
-    //         })
-    //         .fail((request, status, error) => {
-    //
-    //             console.log(request)
-    //         });
-    // });
 });

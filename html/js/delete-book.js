@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const deleteButton = document.getElementById('deletebutton');
+    const deleteButton = document.getElementById('deleteButton');
 
-    deleteButton.addEventListener('click', (event) => {
+    deleteButton.addEventListener('submit', (event) => {
             deleteBook(bookId);
     });
 });

@@ -29,6 +29,7 @@
                         <?php } ?>
                     </div>
                     <div class="col-md-6">
+                        <div class="clearfix bg-light p-3 rounded">
                         <p><b>Author</b><br />
                             <?php echo $viewModel['book']['author_id']; ?></p>
 
@@ -40,9 +41,10 @@
 
                         <p><b>Description</b><br />
                             <?php echo $viewModel['book']['description']; ?></p>
+                        </div>
                     </div>
                 </div>
-                <div class="intro">
+                <div class="intro mt-3">
                     <button onclick="window.location = '?route=allbooks'"type="button" class="btn btn-secondary">Back</button>
                     <?php if($viewModel['profile']) { ?>
                     <button onclick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'"type="button" class="btn btn-info">Edit book</button>
