@@ -49,12 +49,15 @@ class Book extends Database
 
     public function one($id = 0)
     {
-        return $this->getOne("SELECT {$this->table_name}.*, 
-                                      {$this->author_table}.name AS author,
-                                      {$this->category_table}.name AS category FROM {$this->table_name}
-                                      JOIN {$this->author_table} ON {$this->table_name}.author_id = {$this->author_table}.id 
-                                      JOIN {$this->category_table} ON {$this->table_name}.category_id = {$this->category_table}.id 
-                                      WHERE {$this->primary_key} = :id;", ['id' => $id]);
+        return $this->getOne("  SELECT 
+                                        books.*, 
+                                        authors.name AS author_name,
+                                        categories.name AS category_name 
+                                      FROM 
+                                        books
+                                      left join authors on (authors.id = books.author_id)
+                                      left join categories on (categories.id = books.category_id)
+                                      WHERE books.id = :id;", ['id' => $id]);
     }
 
     public function save($columns = [], $id = null)

@@ -14,7 +14,7 @@
 
                         <?php if($viewModel['imagePath']) { ?>
 
-                            <img class="mb-4 rounded" src="<?php echo $viewModel['imagePath']; ?>" width="350px" height="auto" />
+                            <img class="mb-4 rounded" src="<?php echo $viewModel['imagePath']; ?>" width="350px" height="500px" />
 
                         <?php } ?>
 
@@ -31,10 +31,10 @@
                     <div class="col-md-6">
                         <div class="clearfix bg-light p-3 rounded">
                         <p><b>Author</b><br />
-                            <?php echo $viewModel['book']['author_id']; ?></p>
+                            <?php echo $viewModel['book']['author_name']; ?></p>
 
                         <p><b>Category</b><br />
-                            <?php echo $viewModel['book']['category_id']; ?></p>
+                            <?php echo $viewModel['book']['category_name']; ?></p>
 
                         <p><b>ISBN</b><br />
                             <?php echo $viewModel['book']['isbn']; ?></p>
