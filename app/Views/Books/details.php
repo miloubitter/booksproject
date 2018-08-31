@@ -52,5 +52,7 @@
         </div>
     </div>
 </div>
-
+<script>
+    let bookId = <?php echo $viewModel['book']['id']?>;
+</script>
 <script src="js/delete-book.js"></script>
