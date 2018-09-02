@@ -47,6 +47,9 @@ $(document).ready(() => {
                 row.onclick = () => {
                     window.location = '?route=show&id=' + books[i].id;
                 };
+                //Ergens moet nog path naar die file toe
+                const imageCol = document.createElement('td');
+                imageCol.content = books[i].image_filename;
 
                 const titleCol = document.createElement('td');
                 titleCol.textContent = books[i].title;
@@ -66,6 +69,7 @@ $(document).ready(() => {
                 const priceCol = document.createElement('td');
                 priceCol.textContent =books[i].price;
 
+                row.appendChild(imageCol);
                 row.appendChild(titleCol);
                 row.appendChild(authorCol);
                 row.appendChild(categoryCol);
