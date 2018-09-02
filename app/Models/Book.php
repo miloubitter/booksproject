@@ -140,10 +140,10 @@ class Book extends Database
             $columns['id'] = $id;
             $columns['filename'] = $fileName;
             $this->execute("  UPDATE
-                                {$this->table_name}
+                                books
                               SET
                                 image_filename = :filename
-                              WHERE {$this->primary_key} = :id", $columns);
+                              WHERE books.id = :id", $columns);
         }
         return $id;
     }
