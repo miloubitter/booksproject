@@ -77,7 +77,7 @@
 
             <?php } ?>
 
-
+<br /><br /><br />
             <?php
             if ($viewModel['messages']) {
                 $message = implode('<br />',$viewModel['messages']);
