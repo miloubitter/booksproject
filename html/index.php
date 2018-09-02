@@ -63,12 +63,16 @@ if($route == 'index') {
 }else if( $route == 'upload-image' &&  $method == 'POST') {
     $bookController = new BookController();
     $bookController->uploadImage($id);
+
+//    IS DEZE NODIG? HOEFT NIET EEN APARTE VIEW TE HEBBEN!!!
+
 //}else if ($route == "upload-image" && $method == "GET") {
 //        $bookController = new BookController();
 //        $bookController->bookimage($id);
-//} else if ($route == "upload-image" && $method == "POST") {
-//        $bookController = new BookController();
-//        $bookController->uploadImage($id);
+//    WEL NODIG VOOR DE UPLOAD
+} else if ($route == "upload-image" && $method == "POST") {
+        $bookController = new BookController();
+        $bookController->uploadImage($id);
 
 
 }else if($route == 'login' && $method=='GET'){

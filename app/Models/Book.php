@@ -133,18 +133,18 @@ class Book extends Database
 
             return true;
     }
-//    public function changeAuthorFileName($id, $fileName)
-//    {
-//        {
-//            //update
-//            $columns['id'] = $id;
-//            $columns['filename'] = $fileName;
-//            $this->execute("  UPDATE
-//                                {$this->table_name}
-//                              SET
-//                                image_filename = :filename
-//                              WHERE {$this->primary_key} = :id", $columns);
-//        }
-//        return $id;
-//    }
+    public function changeImageFileName($id, $fileName)
+    {
+        {
+            //update
+            $columns['id'] = $id;
+            $columns['filename'] = $fileName;
+            $this->execute("  UPDATE
+                                {$this->table_name}
+                              SET
+                                image_filename = :filename
+                              WHERE {$this->primary_key} = :id", $columns);
+        }
+        return $id;
+    }
 }
