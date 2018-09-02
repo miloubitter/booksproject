@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="titleText"
+            <div class="titleText">
             <!--       Javascript created content (h1)        -->
             </div>
             <div class="votes">

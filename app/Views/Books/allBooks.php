@@ -8,7 +8,7 @@
             <table class="table">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col">Image</th>
+                    <th scope="col">Cover</th>
                     <th scope="col">Title</th>
                     <th scope="col" class="d-none d-sm-table-cell">Author</th>
                     <th scope="col" class="d-none d-sm-table-cell">Category</th>

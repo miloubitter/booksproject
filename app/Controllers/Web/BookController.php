@@ -23,9 +23,19 @@ class BookController extends BaseController
         return '';
     }
 
-    public function validate($fields = [])
+    public function showContact()
     {
+        $book = new Book();
 
+        $viewModel = [
+            'pageTitle' => "Contact",
+            'books' => $book->all(),
+            'errors' => $this->getErrors(),
+            'messages' => $this->getMessages(),
+            'profile' => Authentication::getProfile()
+        ];
+
+        $this->renderWebView('/Books/contact', $viewModel);
     }
 
     public function index()

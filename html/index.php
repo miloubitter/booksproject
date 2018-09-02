@@ -36,6 +36,10 @@ if($route == 'index') {
     $bookController = new BookController();
     $bookController->allBooks();
 
+} else if($route == 'contact') {
+    $bookController = new BookController();
+    $bookController->showContact();
+
 } else if($route == 'show' && $method=='GET') {
     $bookController = new BookController();
     $bookController->show($id);
@@ -60,16 +64,6 @@ if($route == 'index') {
     $bookController = new BookController();
     $bookController->destroy($id);
 
-}else if( $route == 'upload-image' &&  $method == 'POST') {
-    $bookController = new BookController();
-    $bookController->uploadImage($id);
-
-//    IS DEZE NODIG? HOEFT NIET EEN APARTE VIEW TE HEBBEN!!!
-
-//}else if ($route == "upload-image" && $method == "GET") {
-//        $bookController = new BookController();
-//        $bookController->bookimage($id);
-//    WEL NODIG VOOR DE UPLOAD
 } else if ($route == "upload-image" && $method == "POST") {
         $bookController = new BookController();
         $bookController->uploadImage($id);
