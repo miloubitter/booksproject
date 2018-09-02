@@ -1,8 +1,9 @@
 <div class="container">
     <div class="row">
-        <div class="titleText col">
-            <h1><?php echo $viewModel['book']['title']?></h1>
-            <!--  MOET NOG KOMEN !!!    Javascript created content         -->
+        <div class="col">
+            <div class="titleText"
+            <!--       Javascript created content (h1)        -->
+            </div>
             <div class="votes">
                     <div class="vote-count" data-id="<?php echo $viewModel['book']['id']?>"><?php echo $viewModel['book']['votes']?></div>
                     <a class="up-vote" href="#"><i class="far fa-thumbs-up"></i></a>
