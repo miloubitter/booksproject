@@ -1,5 +1,5 @@
-
-<h1><?php echo $viewModel['pageTitle']?></h1>
+<br />
+<h1 class="mt-5"><?php echo $viewModel['pageTitle']?></h1>
 <div class="container">
     <div class="row">
         <div class="col">
@@ -8,7 +8,7 @@
             <table class="table">
                 <thead class="thead-light">
                 <tr>
-                    <th scope="col">Cover</th>
+                    <th scope="col">Book cover</th>
                     <th scope="col">Title</th>
                     <th scope="col" class="d-none d-sm-table-cell">Author</th>
                     <th scope="col" class="d-none d-sm-table-cell">Category</th>

@@ -77,13 +77,13 @@
 
             <?php } ?>
 
-<br /><br /><br />
+
             <?php
             if ($viewModel['messages']) {
                 $message = implode('<br />',$viewModel['messages']);
                 ?>
-
-                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <br/>
+                <div class="alert alert-success alert-dismissible fade show mt-5" role="alert">
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

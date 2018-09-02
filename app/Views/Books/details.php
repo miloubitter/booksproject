@@ -1,7 +1,8 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="titleText">
+            <br/>
+            <div class="titleText mt-5">
             <!--       Javascript created content (h1)        -->
             </div>
             <div class="votes">

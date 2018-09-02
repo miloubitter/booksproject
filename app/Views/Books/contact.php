@@ -1,4 +1,5 @@
-<h1>Contact </h1> <br /><br />
+<br/>
+<h1 class="mt-5">Contact </h1> <br /><br />
 
 
 <div class="container">
