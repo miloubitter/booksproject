@@ -29,23 +29,20 @@
             <p>There is so much to see on this website. We have a large various collection of books. <br /> Have fun reading. </p> <br /><br /><br />
     </div>
 
-        <h2>Top 10 books</h2>
-    <?php
-//    Foreach loop maken kijkend naar de meeste votes. Dan de top 10 van die votes loopen zoals hieronder.
-    ?>
+        <h2>Top 5 books</h2>
+    Alleen top 5 qua votes laten zien + li laten doorlopen
 
+
+    <?php
+
+    foreach ($viewModel['books'] as $id=>$book) { ?>
         <ol>
-            <li> Boek 1</li>
-            <li> Boek 2</li>
-            <li> Boek 3</li>
-            <li> Boek 4</li>
-            <li> Boek 5</li>
-            <li> Boek 6</li>
-            <li> Boek 7</li>
-            <li> Boek 8</li>
-            <li> Boek 9</li>
-            <li> Boek 10</li>
+            <li> <p><?php echo $book['title']?> </p>
+                <p> Afbeelding </p></li>
         </ol>
+        <?php
+    }
+    ?>
 </div>
 
 

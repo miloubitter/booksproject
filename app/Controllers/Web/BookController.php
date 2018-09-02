@@ -128,41 +128,6 @@ class BookController extends BaseController
 
     }
 
-//    public function uploadImage($id) : void
-//    {
-//        $imageFile = $_FILES['imageFile'] ?? null;
-//
-//        if (!$imageFile || $imageFile['error'] > 0) {
-//            $this->addError('There was an error while extracting the image');
-//            header('Location: ?route=show&id=' . $id);
-//        }
-//        else if (!in_array($imageFile['type'],array('image/png','image/jpeg'))) {
-//            $this->addError('The supplied image was not of type PNG or JPEG');
-//            header('Location: ?route=show&id=' . $id);
-//        }
-//        else {
-//            $targetImageFile = __DIR__ . '/../../../html/images/' . $id . '.jpg';
-//
-//            rename($imageFile['tmp_name'], $targetImageFile);
-//            header('Location: ?route=show&id=' . $id);
-//        }
-//    }
-//    public function bookimage($id)
-//    {
-//        $book = new Book();
-//        $currentBook = $book->one($id);
-//
-//        $viewModel = [
-//            'pageTitle' => "Books",
-//            'book' => $currentBook,
-//            'errors' => $this->getErrors(),
-//            'messages' => $this->getMessages(),
-//            'profile' => Authentication::getProfile(),
-//        ];
-//
-//        $this->renderWebView('/Books/details', $viewModel);
-//    }
-//
     public function uploadImage($id) : void
     {
         $imageFile = $_FILES['imageFile'] ?? null;
