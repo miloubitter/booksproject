@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\AuthorController;
 use App\Controllers\Web\BookController;
 use App\Controllers\Web\LoginController;
 use Dotenv\Dotenv;
@@ -28,6 +29,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 //print_r($_SESSION);
 //echo '</pre>';
 
+// ****** Main routes ******
 if($route == 'index') {
     $bookController = new BookController();
     $bookController->index();
@@ -40,6 +42,8 @@ if($route == 'index') {
     $bookController = new BookController();
     $bookController->showContact();
 
+
+//    ******  Books ******
 } else if($route == 'show' && $method=='GET') {
     $bookController = new BookController();
     $bookController->show($id);
@@ -65,10 +69,21 @@ if($route == 'index') {
     $bookController->destroy($id);
 
 } else if ($route == "upload-image" && $method == "POST") {
-        $bookController = new BookController();
-        $bookController->uploadImage($id);
+    $bookController = new BookController();
+    $bookController->uploadImage($id);
 
 
+//    ******  Authors ******
+} else if ($route == "authors" && $method == "GET") {
+    $adminAuthorController = new AuthorController();
+    $adminAuthorController->getAllAuthors();
+
+} else if ($route == "show-author" && $method == "GET") {
+    $adminAuthorController = new AuthorController();
+    $adminAuthorController->showAuthor($id);
+
+
+//    ****** Login ******
 }else if($route == 'login' && $method=='GET'){
     $loginController = new LoginController();
     $loginController->show();
