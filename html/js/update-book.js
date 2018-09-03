@@ -38,6 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     console.log(request)
                 });
+            const authorId = document.querySelector('author_id');
+            for (i = 0; i < authors.length; i++) {
+                const authorSelectField = document.createElement('select');
+                let authorSelect = document.createElement('option');
+                authorSelect.textContent = authors[i].name;
+                authorSelect.setAttribute('value', authors[i].id);
+                authorSelectField.appendChild(authorSelect);
+            }
+            authorId.appendChild(authorSelectField);
         }
     });
 
