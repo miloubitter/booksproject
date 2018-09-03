@@ -4,12 +4,7 @@
             <br/>
             <div class="titleText mt-5">
             <!--       Javascript created content (h1)        -->
-            </div>
-            <div class="votes">
-                    <div class="vote-count" data-id="<?php echo $viewModel['book']['id']?>"><?php echo $viewModel['book']['votes']?></div>
-                    <a class="up-vote" href="#"><i class="far fa-thumbs-up"></i></a>
-                    <a class="down-vote" href="#"><i class="far fa-thumbs-down"></i></a>
-                </div>
+            </div> <br/>
 
                 <!-- Image show on page     -->
                 <div class="row">
@@ -19,6 +14,12 @@
                             <img class="mb-4 rounded" src="<?php echo $viewModel['imagePath']; ?>" width="350px" height="500px" />
 
                         <?php } ?>
+                        <div class="votes">
+                            <p><u><b>Did you like the book?</b></u></p>
+                            <a class="up-vote" href="#"><i class="far fa-thumbs-up" style="color: limegreen"></i></a>
+                            <a class="down-vote" href="#"><i class="far fa-thumbs-down" style="color: red"></i></a>
+                            <div class="vote-count" data-id=" <?php echo $viewModel['book']['id']?>"><b><?php echo $viewModel['book']['votes']?></b> readers liked this book </div> <br/>
+                        </div>
 
                         <?php if ($viewModel['profile']) { ?>
                             <!-- Image upload on page     -->
@@ -54,7 +55,7 @@
                             </div>
 
                             <div class="descriptionText">
-                                <b>Description</b><br />
+                                <b>Summary</b><br />
                                 <!--       Javascript created content (p)        -->
                             </div>
                         </div>
