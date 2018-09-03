@@ -151,7 +151,18 @@ class Book extends Database
 
     public function getTopFiveBooks()
     {   $sql = "SELECT
-                *
+                books.id as id,
+                    books.category_id as category_id,
+                    books.author_id as author_id,
+                    books.title as title,
+                    substr(books.description,1,400) as intro,
+                    books.description as description,
+                    books.price as price,
+                    books.isbn as isbn,
+                    books.created_at as created_at,
+                    books.updated_at as updated_at,
+                    books.image_filename as image_filename,
+                    books.votes as votes
               FROM
               books
               ORDER BY

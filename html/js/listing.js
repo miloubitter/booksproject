@@ -51,6 +51,7 @@ $(document).ready(() => {
                 const imageCol = document.createElement('td');
                 const imagePath = document.createElement('IMG');
                 imagePath.setAttribute('src', 'images/' + books[i].image_filename);
+                imagePath.setAttribute('class','imagesTable');
                 imageCol.append(imagePath);
 
                 const titleCol = document.createElement('td');

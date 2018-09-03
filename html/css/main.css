@@ -57,6 +57,14 @@
   height: auto;
 }
 
+.imagesTable {
+  height: 140px;
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+  margin-top: 6px;
+}
+
 body {
   font-family: "Muli", sans-serif;
   font-size: 12pt;
@@ -83,6 +91,10 @@ h3 {
 
 .intro {
   text-align: center;
+}
+
+.linkDetail {
+  color: #add8e6;
 }
 
 table tr:hover {

@@ -33,6 +33,10 @@ $method = $_SERVER['REQUEST_METHOD'];
 if($route == 'index') {
     $bookController = new BookController();
     $bookController->index();
+
+//} else if($route == 'topfivebooks') {
+//    $bookController = new BookController();
+//    $bookController->topBooks();
    
 } else if($route == 'allbooks') {
     $bookController = new BookController();

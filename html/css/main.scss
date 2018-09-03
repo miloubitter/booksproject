@@ -3,6 +3,7 @@
 @import "buttons";
 @import "slides";
 @import "footer";
+@import "images";
 
 body{
   font-family: 'Muli', sans-serif;
@@ -30,6 +31,10 @@ h3 {
 
 .intro {
   text-align: center;
+}
+
+.linkDetail {
+  color: $bc_blue;
 }
 
 table {
