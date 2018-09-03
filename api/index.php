@@ -17,7 +17,7 @@ set_error_handler('Infrastructure\ErrorHandler::handleErrors');
 $route = $_GET['route'] ?? 'index';
 $id = $_GET['id'] ?? null;
 $method = $_SERVER['REQUEST_METHOD'];
-
+    // *** Books ***
     if ($route === 'books' && $method === 'GET') {
         $bookController = new BookController();
         $bookController->getBooks();
@@ -37,6 +37,11 @@ $method = $_SERVER['REQUEST_METHOD'];
     }else if ($route === 'delete' && $method === 'POST') {
         $bookController = new BookController();
         $bookController->deleteBook();
+    }
+
+    else if ($route === 'authors') {
+        $bookController = new BookController();
+        $bookController->getAuthors();
     }
 
     else if ($route === 'votes')

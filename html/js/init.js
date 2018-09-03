@@ -18,6 +18,9 @@ const deleteBook = (bookId) => {
 const getOneBook = (bookId) => {
     return $.get(env.api + '?route=book&id=' + bookId);
 };
+const getAuthors = () => {
+    return $.get(env.api + '?route=authors');
+}
 
 //FormValidation
 const fieldValidation = (event) => {

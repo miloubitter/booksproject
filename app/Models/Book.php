@@ -171,4 +171,14 @@ class Book extends Database
               5";
         return $this->getAll($sql);
     }
+
+    public function categories()
+    {
+        return $this->getAll("SELECT * FROM {$this->category_table}");
+    }
+
+    public function authors()
+    {
+        return $this->getAll("SELECT * FROM {$this->author_table}");
+    }
 }

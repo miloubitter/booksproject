@@ -34,6 +34,16 @@
             <li class="nav-item active">
                 <a class="nav-link link" href="?route=authors">Authors <span class="sr-only">(current)</span></a>
             </li>
+<!--            <li class="nav-item dropdown">-->
+<!--                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
+<!--                    Authors-->
+<!--                </a>-->
+<!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
+<!--                    --><?php //foreach ($viewModel['authors'] as $lol => $author){ ?>
+<!--                        <a class="dropdown-item lower" href="?route=show&id=--><?php //echo $author['id']?><!--">--><?php //echo $author['name']?><!--</a>-->
+<!--                    --><?php //} ?>
+<!--                </div>-->
+<!--            </li>-->
             <li class="nav-item active">
                 <a class="nav-link link" href="#">Categories <span class="sr-only">(current)</span></a>
             </li>

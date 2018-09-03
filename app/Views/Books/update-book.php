@@ -7,9 +7,8 @@
         <input type="text" name="title" id="title" value="<?php echo $viewModel['book']['title']?>" required/>
         </div>
 
-        <div class="form-row">
+        <div class="form-row authorRow">
         <label for="author_id">Author</label>
-        <input type="text" name="author_id" id="author_id" value="<?php echo $viewModel['book']['author_id']?>" required/>
         </div>
 
         <div class="form-row">
@@ -41,5 +40,6 @@
         let bookId = <?php echo $viewModel['book']['id']?>;
     </script>
     <script src="js/update-book.js"></script>
+<!--    <script src="js/authors.js"-->
 </div>
 
