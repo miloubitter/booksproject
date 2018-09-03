@@ -53,21 +53,6 @@ class BookController extends BaseController
         $this->renderWebView('/Books/startPage', $viewModel);
     }
 
-//    public function topBooks()
-//    {
-//        $book = new Book();
-//
-//        $viewModel = [
-//            'pageTitle' => "Top 5 books",
-//            'books' => $book->getTopFiveBooks(),
-//            'errors' => $this->getErrors(),
-//            'messages' => $this->getMessages(),
-//            'profile' => Authentication::getProfile()
-//        ];
-//
-//        $this->renderWebView('/Books/startPage', $viewModel);
-//    }
-
     public function allBooks()
     {
         $book = new Book();

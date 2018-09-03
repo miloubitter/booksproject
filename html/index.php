@@ -33,10 +33,6 @@ $method = $_SERVER['REQUEST_METHOD'];
 if($route == 'index') {
     $bookController = new BookController();
     $bookController->index();
-
-//} else if($route == 'topfivebooks') {
-//    $bookController = new BookController();
-//    $bookController->topBooks();
    
 } else if($route == 'allbooks') {
     $bookController = new BookController();
@@ -56,21 +52,21 @@ if($route == 'index') {
     $bookController = new BookController();
     $bookController->edit($id);
 
-}else if($route == 'edit' && $method=='POST') {
-    $bookController = new BookController();
-    $bookController->update($_POST,$id);
+//}else if($route == 'edit' && $method=='POST') {
+//    $bookController = new BookController();
+//    $bookController->update($_POST,$id);
 
 }else if($route == 'create' && $method=='GET') {
     $bookController = new BookController();
     $bookController->create();
-    
-}else if($route == 'create' && $method=='POST') {
-    $bookController = new BookController();
-    $bookController->store($_POST);
-    
-}else if($route == 'delete') {
-    $bookController = new BookController();
-    $bookController->destroy($id);
+//
+//}else if($route == 'create' && $method=='POST') {
+//    $bookController = new BookController();
+//    $bookController->store($_POST);
+//
+//}else if($route == 'delete') {
+//    $bookController = new BookController();
+//    $bookController->destroy($id);
 
 } else if ($route == "upload-image" && $method == "POST") {
     $bookController = new BookController();
@@ -78,13 +74,13 @@ if($route == 'index') {
 
 
 //    ******  Authors ******
-} else if ($route == "authors" && $method == "GET") {
-    $adminAuthorController = new AuthorController();
-    $adminAuthorController->getAllAuthors();
-
-} else if ($route == "show-author" && $method == "GET") {
-    $adminAuthorController = new AuthorController();
-    $adminAuthorController->showAuthor($id);
+//} else if ($route == "authors" && $method == "GET") {
+//    $adminAuthorController = new AuthorController();
+//    $adminAuthorController->getAllAuthors();
+//
+//} else if ($route == "show-author" && $method == "GET") {
+//    $adminAuthorController = new AuthorController();
+//    $adminAuthorController->showAuthor($id);
 
 
 //    ****** Login ******

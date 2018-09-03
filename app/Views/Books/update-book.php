@@ -41,5 +41,6 @@
         let bookId = <?php echo $viewModel['book']['id']?>;
     </script>
     <script src="js/update-book.js"></script>
+
 </div>
 
