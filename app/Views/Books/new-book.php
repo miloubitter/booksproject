@@ -9,9 +9,8 @@
                     <input type="text" name="title" id="title" class="form-control" required/>
                 </div>
 
-                <div class="form-group">
-                    <label for="author_id">Author</label>
-                    <input type="number" name="author_id" id="author_id" class="form-control" required/>
+                <div class="form-group authorRow">
+                    <label for="author_id">Author</label> <br/>
                 </div>
 
                 <div class="form-group">

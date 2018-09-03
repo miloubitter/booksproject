@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const book = {
                 title: form.title.value,
-                author_id: form.author_id.value,
+                author_id: form.author.value,
                 category_id: form.category_id.value,
                 isbn: form.isbn.value,
                 price: form.price.value,
@@ -38,15 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     console.log(request)
                 });
-            const authorId = document.querySelector('author_id');
-            for (i = 0; i < authors.length; i++) {
-                const authorSelectField = document.createElement('select');
-                let authorSelect = document.createElement('option');
-                authorSelect.textContent = authors[i].name;
-                authorSelect.setAttribute('value', authors[i].id);
-                authorSelectField.appendChild(authorSelect);
-            }
-            authorId.appendChild(authorSelectField);
         }
     });
 
@@ -65,4 +56,28 @@ document.addEventListener('DOMContentLoaded', () => {
     for (let i = 0; i < inputFields.length; i++) {
         inputFields[i].addEventListener('blur', fieldValidation);
     }
+
+    getAuthors()
+        .done((data, text) => {
+
+            let authors = JSON.parse(data);
+            const authorRow = document.querySelector('.authorRow');
+            const authorSelectField = document.createElement('select');
+            authorSelectField.setAttribute('id', 'author');
+            authorSelectField.setAttribute('name', 'author');
+
+            for (i = 0; i < authors.length; i++) {
+                let authorSelect = document.createElement('option');
+                authorSelect.textContent = authors[i].name;
+                authorSelect.setAttribute('value', authors[i].id);
+                authorSelectField.appendChild(authorSelect);
+            }
+
+            authorRow.appendChild(authorSelectField);
+
+
+        })
+        .fail((request, status, error) => {
+            console.log(request);
+        });
 });
