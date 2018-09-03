@@ -30,19 +30,18 @@
     </div>
 
         <h2>Top 5 books</h2>
-    Alleen top 5 qua votes laten zien + li laten doorlopen
-
-
+    <ol>
     <?php
 
     foreach ($viewModel['books'] as $id=>$book) { ?>
-        <ol>
+
             <li> <p><?php echo $book['title']?> </p>
                 <p> Afbeelding </p></li>
-        </ol>
         <?php
     }
     ?>
+    </ol>
+
 </div>
 
 

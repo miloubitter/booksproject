@@ -36,6 +36,7 @@ class Book extends Database
                     books.isbn as isbn,
                     books.created_at as created_at,
                     books.updated_at as updated_at,
+                    books.image_filename as image_filename,
                     books.votes as votes,
                     authors.name as author_name,
                     categories.name as category_name
@@ -146,5 +147,17 @@ class Book extends Database
                               WHERE books.id = :id", $columns);
         }
         return $id;
+    }
+
+    public function getTopFiveBooks()
+    {   $sql = "SELECT
+                *
+              FROM
+              books
+              ORDER BY
+              votes DESC
+              LIMIT
+              5";
+        return $this->getAll($sql);
     }
 }
