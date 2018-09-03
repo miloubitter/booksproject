@@ -44,7 +44,7 @@ class BookController extends BaseController
 
         $viewModel = [
             'pageTitle' => "Book Catalog",
-            'books' => $book->all(),
+            'books' => $book->getTopFiveBooks(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()
