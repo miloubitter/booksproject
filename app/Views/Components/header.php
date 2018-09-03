@@ -49,7 +49,7 @@
                         <?php echo $viewModel['profile']['userFullName']; ?>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="?route=login">Logout</a>
+                        <a class="dropdown-item" href="?route=logout">Logout</a>
                     </div>
                 </li>
 

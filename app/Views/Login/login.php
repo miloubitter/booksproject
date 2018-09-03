@@ -21,11 +21,10 @@
                         </div>
                     </div>
                 </div>
-            </form>
-
                 <br clear="all" />
 
                 <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Login</button>
+            </form>
         </div>
     </div>
 </div>
