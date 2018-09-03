@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (form.checkValidity()) {
 
             const book = {
-                image_filename: form.image_filename.value,
               title: form.title.value,
               author_id: form.author_id.value,
               category_id: form.category_id.value,

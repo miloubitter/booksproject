@@ -108,7 +108,7 @@ class BookController extends BaseController
         $book = new Book();
 
         $viewModel = [
-            'pageTitle' => "Books",
+            'pageTitle' => "Edit book",
             'book' => $book->one($id),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),

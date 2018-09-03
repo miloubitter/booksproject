@@ -61,11 +61,14 @@
                     </div>
                 </div>
             <!-- Buttons    -->
+            <?php if(!$viewModel['profile']) { ?>
+                <button onclick="window.location = '?route=allbooks'"type="button" class="btn btn-secondary">Back</button>
+            <?php } ?>
             <div class="intro mt-3">
-                    <button onclick="window.location = '?route=allbooks'"type="button" class="btn btn-secondary">Back</button>
                     <?php if($viewModel['profile']) { ?>
-                    <button onclick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'"type="button" class="btn btn-info">Edit book</button>
-                    <button type="button" id="deleteButton" class="btn btn-danger">Delete book</button>
+                        <button onclick="window.location = '?route=allbooks'"type="button" class="btn btn-secondary">Back</button>
+                        <button onclick="window.location = '?route=edit&id=<?php echo $viewModel['book']['id'] ?>'"type="button" class="btn btn-info">Edit book</button>
+                        <button type="button" id="deleteButton" class="btn btn-danger">Delete book</button>
                     <?php } ?>
                 </div>
         </div>
