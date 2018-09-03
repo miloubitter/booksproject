@@ -84,16 +84,16 @@ if($route == 'index') {
 
 
 //    ****** Login ******
-}else if($route == 'login' && $method=='GET'){
-    $loginController = new LoginController();
+} elseif ($route == "login" && $method == "GET") {
+    $loginController = new Logincontroller();
     $loginController->show();
-    
-}else if($route == 'login' && $method=='POST') {
-    $loginController = new LoginController();
-    $loginController->login($_POST);
-    
-}else if($route == 'logout') {
-    $loginController = new LoginController();
+
+} elseif ($route == "login" && $method == "POST") {
+    $loginController = new Logincontroller();
+    $loginController->login();
+
+} elseif ($route == "logout") {
+    $loginController = new Logincontroller();
     $loginController->logout();
 }
 

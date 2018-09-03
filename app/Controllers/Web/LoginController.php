@@ -16,6 +16,8 @@ class LoginController extends BaseController
             'profile' => Authentication::getProfile()
         ];
 
+        unset($_SESSION['error']);
+
         $this->renderWebView('/Login/login', $viewModel);
     }
 
