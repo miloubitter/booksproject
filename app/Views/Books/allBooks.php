@@ -1,9 +1,16 @@
-<br />
-<h1 class="mt-5"><?php echo $viewModel['pageTitle']?></h1>
+<div class="jumbotron jumbotron-fluid my-5">
+    <div class="container pt-4">
+        <h1 class="display-4 text-warning text-center">Book Catalog</h1>
+        <p class="lead text-white text-center">Welcome to the book catalog. <br /> Click on the books to see their details!.</p>
+    </div>
+</div>
+<!--<br />-->
+<!--<h1 class="mt-5">--><?php //echo $viewModel['pageTitle']?><!--</h1>-->
+
 <div class="container">
     <div class="row">
         <div class="col">
-            <p class="intro"> <br /> Welcome to the book catalog. <br /> Click on the books to see their details!</p>
+<!--            <p class="intro"> <br /> Welcome to the book catalog. <br /> Click on the books to see their details!</p>-->
 
             <table class="table">
                 <thead class="thead-light">
