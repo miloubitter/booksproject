@@ -3,6 +3,7 @@
 <head>
     <meta charset ="utf-8">
     <title><?php echo $viewModel['pageTitle']?></title>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -26,7 +27,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto link">
             <li class="nav-item active">
-                <a class="nav-link link" href="?route=index">Home <span class="sr-only">(current)</span></a>
+                <a class="nav-link link" href="?route=index"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link link" href="?route=allbooks">Books <span class="sr-only">(current)</span></a>
@@ -40,7 +41,7 @@
 <!--                </a>-->
 <!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
 <!--                    --><?php //foreach ($viewModel['authors'] as $lol => $author){ ?>
-<!--                        <a class="dropdown-item lower" href="?route=show&id=--><?php //echo $author['id']?><!--">--><?php //echo $author['name']?><!--</a>-->
+<!--                        <a class="dropdown-item lower" href="?route=authorShow&id=--><?php //echo $author['id']?><!--">--><?php //echo $author['name']?><!--</a>-->
 <!--                    --><?php //} ?>
 <!--                </div>-->
 <!--            </li>-->

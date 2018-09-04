@@ -1,4 +1,3 @@
-console.log('hello');
 
 $('.slides').slick({
     fade: true,

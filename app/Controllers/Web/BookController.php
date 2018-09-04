@@ -198,7 +198,7 @@ class BookController extends BaseController
         $viewModel = [
             'pageTitle' => "Biography",
             'author' => $author->oneAuthor($id),
-            'authors' => $author->authors(),
+            'authors' => $author->authors($id),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()

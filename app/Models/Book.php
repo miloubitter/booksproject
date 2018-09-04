@@ -172,13 +172,28 @@ class Book extends Database
 
     public function oneAuthor($id = 0)
     {
-        return $this->getOne("SELECT authors.*, 
+        return $this->getOne("SELECT authors.*,
                                     books.id
                                     AS blog_id
                                     FROM authors
                                     JOIN books ON books.author_id = authors.id
                                     WHERE authors.id = :id;", ['id' => $id]);
     }
+
+//    public function oneAuthor($id = 0)
+//    {
+//        return $this->getOne("SELECT {$this->author_table}.*,
+//                                    {$this->table_name}.title,
+//                                    {$this->table_name}description,
+//                                     {$this->category_table}.name
+//                                    AS category,
+//                                    {$this->table_name}.{$this->primary_key}
+//                                    AS blog_id
+//                                    FROM {$this->author_table}
+//                                    JOIN {$this->table_name} ON {$this->table_name}.author_id = {$this->author_table}.id
+//                                    JOIN {$this->category_table} ON {$this->table_name}.category_id = {$this->category_table}.id
+//                                    WHERE {$this->author_table}.{$this->primary_key} = :id;", ['id' => $id]);
+//    }
 
     public function getCategoryById($id) {
         $parameters = array(
