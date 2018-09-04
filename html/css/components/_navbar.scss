@@ -32,7 +32,12 @@
 .jumbotron {
   background-image: url("https://images.pexels.com/photos/1106468/pexels-photo-1106468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
-  color: $bc_yellow;
+  margin: 0;
+  text-shadow: 1px 1px black;
+}
+.jumbotronImage {
+  background-image: url("https://images.pexels.com/photos/8264/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
   margin: 0;
   text-shadow: 1px 1px black;
 }

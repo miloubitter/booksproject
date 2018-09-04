@@ -5,7 +5,7 @@
 @import "colors";
 
 table {
-  tr {
+  .tablerow {
     &:hover{
       cursor: pointer;
       background: $bc_blue;

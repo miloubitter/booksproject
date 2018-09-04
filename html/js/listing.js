@@ -43,6 +43,7 @@ $(document).ready(() => {
 
             for(let i=0; i<books.length; i+=1){
                 const row = document.createElement('tr');
+                row.setAttribute('class','tablerow');
 
                 row.onclick = () => {
                     window.location = '?route=show&id=' + books[i].id;

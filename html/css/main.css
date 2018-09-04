@@ -18,6 +18,14 @@ h2 {
   color: #f4f142;
 }
 
+.texth1 {
+  color: #add8e6;
+}
+
+.textP {
+  color: #f4f142;
+}
+
 .updateTextField {
   width: 450px;
   height: 32px;
@@ -113,7 +121,7 @@ button {
   color: red;
 }
 
-table tr:hover {
+table .tablerow:hover {
   cursor: pointer;
   background: #add8e6;
   color: #f4f142;
@@ -161,7 +169,13 @@ table tr:hover {
 .jumbotron {
   background-image: url("https://images.pexels.com/photos/1106468/pexels-photo-1106468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
-  color: #f4f142;
+  margin: 0;
+  text-shadow: 1px 1px black;
+}
+
+.jumbotronImage {
+  background-image: url("https://images.pexels.com/photos/8264/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
   margin: 0;
   text-shadow: 1px 1px black;
 }
