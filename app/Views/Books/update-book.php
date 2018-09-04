@@ -1,4 +1,4 @@
-<br/>
+<br/><br/>
 <div class="container">
     <h1 class="mt-5" style="text-align: left"><?php echo $viewModel['pageTitle']?></h1> <br />
     <form novalidate id="updateBookForm">
