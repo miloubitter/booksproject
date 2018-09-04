@@ -47,7 +47,6 @@ $(document).ready(() => {
                 row.onclick = () => {
                     window.location = '?route=show&id=' + books[i].id;
                 };
-                //Ergens moet nog path naar die file toe
                 const imageCol = document.createElement('td');
                 const imagePath = document.createElement('IMG');
                 imagePath.setAttribute('src', 'images/' + books[i].image_filename);

@@ -11,9 +11,8 @@
         <label for="author_id">Author</label>
         </div>
 
-        <div class="form-row">
+        <div class="form-row categoryRow">
         <label for="category_id">Category</label>
-        <input type="text" name="category_id" id="category_id" value="<?php echo $viewModel['book']['category_id']?>" required/>
         </div>
 
         <div class="form-row">
