@@ -1,0 +1,57 @@
+// ======================================
+//  Form Styles
+// ======================================
+
+@import "colors";
+
+.form-row{
+  margin-bottom: 10px;
+}
+
+.form-row label{
+  font-weight: bold;
+  display: inline-block;
+  width: 150px;
+}
+
+.form-description{
+  margin-top: 50px;
+}
+
+.form-description label{
+  display:block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-description textarea{
+  width: 600px;
+  height: 200px;
+}
+
+.form-submit{
+  margin-top: 20px;
+}
+.form-submit input{
+  font-size: 1.0em;
+  -webkit-appearance: none;
+}
+
+#createBookForm {
+  input, textarea{
+    &:required:invalid {
+      border-right: solid 2px #cd5c5c;
+      border-left: solid 2px #cd5c5c;
+    }
+    &:required:valid {
+      border-bottom: solid 2px #32cd32;
+    }
+    &:optional{
+      border-right: solid 2px $bc_blue;
+    }
+  }
+}
+.error-message{
+  font-size: 0.8rem;
+  color: red;
+}

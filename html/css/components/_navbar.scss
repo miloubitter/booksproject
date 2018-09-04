@@ -1,0 +1,38 @@
+// ======================================
+//  Navbar Styles
+// ======================================
+
+@import "../layout/colors";
+
+.navbar{
+  background-color: $bc_blue;
+  padding-bottom: 10px;
+  margin-bottom: 0 ;
+}
+
+.headerlogo{
+  color: $bc_yellow;
+  font-size: 22px;
+  font-family: 'Muli', sans-serif;
+  &:hover{
+    cursor: pointer;
+    color: $bc_yellow;
+  }
+}
+
+.link {
+  color: white;
+  font-size: 18px;
+  &:hover{
+    cursor: pointer;
+    color: $bc_yellow;
+  }
+}
+
+.jumbotron {
+  background-image: url("https://images.pexels.com/photos/1106468/pexels-photo-1106468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  color: $bc_yellow;
+  margin: 0;
+  text-shadow: 2px 2px black;
+}

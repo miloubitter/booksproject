@@ -1,93 +1,8 @@
-.navbar {
-  background-color: #add8e6;
-  padding-bottom: 10px;
-  margin-bottom: 0;
-}
-
-.headerlogo {
-  color: #f4f142;
-  font-size: 22px;
-  font-family: "Muli", sans-serif;
-}
-.headerlogo:hover {
-  cursor: pointer;
-  color: #f4f142;
-}
-
-.link {
-  color: white;
-  font-size: 18px;
-}
-.link:hover {
-  cursor: pointer;
-  color: #f4f142;
-}
-
-.btn .btn-default {
-  background-color: #dddddd;
-  border: 1px solid #cccccc;
-}
-.btn .btn-default.hover {
-  background-color: #cccccc;
-}
-
-/*Slides*/
-.slides {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto 60px;
-}
-
-.slide img {
-  width: 100%;
-  height: 500px;
-}
-
-.footer {
-  margin-top: 50px;
-  font-size: 0.75em;
-  color: #555555;
-  border-top: solid 1px #add8e6;
-  padding-top: 10px;
-  text-align: center;
-}
-
-.footerAfbeelding {
-  width: 50px;
-  height: auto;
-}
-
-.imagesTable {
-  height: 140px;
-  width: 100px;
-  float: left;
-  margin-right: 10px;
-  margin-top: 6px;
-}
-
 body {
   font-family: "Muli", sans-serif;
   font-size: 12pt;
   margin: 0;
   padding: 0;
-}
-
-.updateTextField {
-  width: 450px;
-  height: 32px;
-}
-
-.newTextField {
-  width: 540px;
-  height: 38px;
-}
-
-.jumbotron {
-  background-image: url("https://images.pexels.com/photos/1106468/pexels-photo-1106468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
-  background-size: cover;
-  color: #f4f142;
-  margin: 0;
-  text-shadow: 2px 2px black;
 }
 
 h1 {
@@ -103,6 +18,16 @@ h2 {
   color: #f4f142;
 }
 
+.updateTextField {
+  width: 450px;
+  height: 32px;
+}
+
+.newTextField {
+  width: 540px;
+  height: 38px;
+}
+
 .intro {
   text-align: center;
 }
@@ -111,44 +36,24 @@ h2 {
   color: #add8e6;
 }
 
-table tr:hover {
-  cursor: pointer;
-  background: #add8e6;
-  color: #f4f142;
-}
-
-.book-listing {
-  margin-top: 50px;
-  width: 1000px;
-}
-
-.book-listing th {
-  text-align: left;
-  border-bottom: solid 1px #555555;
-}
-
-.book-listing th, td {
-  padding: 10px;
-}
-
-#createBookForm input:required:invalid, #createBookForm textarea:required:invalid {
-  border-right: solid 2px #cd5c5c;
-  border-left: solid 2px #cd5c5c;
-}
-#createBookForm input:required:valid, #createBookForm textarea:required:valid {
-  border-bottom: solid 2px #32cd32;
-}
-#createBookForm input:optional, #createBookForm textarea:optional {
-  border-right: solid 2px #add8e6;
-}
-
-.error-message {
-  font-size: 0.8rem;
-  color: red;
-}
-
 button {
   font-size: 1.1em;
+}
+
+.btn .btn-default {
+  background-color: #dddddd;
+  border: 1px solid #cccccc;
+}
+.btn .btn-default.hover {
+  background-color: #cccccc;
+}
+
+.imagesTable {
+  height: 140px;
+  width: 100px;
+  float: left;
+  margin-right: 10px;
+  margin-top: 6px;
 }
 
 .form-row {
@@ -185,11 +90,98 @@ button {
   -webkit-appearance: none;
 }
 
-.description-wrapper textarea {
-  height: 400px;
+#createBookForm input:required:invalid, #createBookForm textarea:required:invalid {
+  border-right: solid 2px #cd5c5c;
+  border-left: solid 2px #cd5c5c;
 }
-.description-wrapper a {
-  color: green;
+#createBookForm input:required:valid, #createBookForm textarea:required:valid {
+  border-bottom: solid 2px #32cd32;
+}
+#createBookForm input:optional, #createBookForm textarea:optional {
+  border-right: solid 2px #add8e6;
+}
+
+.error-message {
+  font-size: 0.8rem;
+  color: red;
+}
+
+table tr:hover {
+  cursor: pointer;
+  background: #add8e6;
+  color: #f4f142;
+}
+
+.book-listing {
+  margin-top: 50px;
+  width: 1000px;
+}
+
+.book-listing th {
+  text-align: left;
+  border-bottom: solid 1px #555555;
+}
+
+.book-listing th, td {
+  padding: 10px;
+}
+
+.navbar {
+  background-color: #add8e6;
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+
+.headerlogo {
+  color: #f4f142;
+  font-size: 22px;
+  font-family: "Muli", sans-serif;
+}
+.headerlogo:hover {
+  cursor: pointer;
+  color: #f4f142;
+}
+
+.link {
+  color: white;
+  font-size: 18px;
+}
+.link:hover {
+  cursor: pointer;
+  color: #f4f142;
+}
+
+.jumbotron {
+  background-image: url("https://images.pexels.com/photos/1106468/pexels-photo-1106468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  color: #f4f142;
+  margin: 0;
+  text-shadow: 2px 2px black;
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto 60px;
+}
+
+.slide img {
+  width: 100%;
+  height: 500px;
+}
+
+.footer {
+  margin-top: 50px;
+  font-size: 0.75em;
+  color: #555555;
+  border-top: solid 1px #add8e6;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.footerAfbeelding {
+  width: 50px;
+  height: auto;
 }
 
 /*# sourceMappingURL=main.css.map */

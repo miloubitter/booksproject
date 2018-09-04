@@ -1,0 +1,50 @@
+// ======================================
+//  Base Styles
+// ======================================
+
+@import "../layout/colors";
+
+body{
+  font-family: 'Muli', sans-serif;
+  font-size: 12pt;
+  margin:0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2.0em;
+  font-weight: bold ;
+  color:$bc_blue;
+  text-align: center;
+  margin-top: 40px;
+}
+
+h2 {
+  text-align: center;
+  color: $bc_yellow;
+}
+
+h3 {
+}
+
+.updateTextField{
+  width: 450px;
+  height: 32px;
+}
+
+.newTextField {
+  width: 540px;
+  height: 38px;
+}
+
+.intro {
+  text-align: center;
+}
+
+.linkDetail {
+  color: $bc_blue;
+}
+
+button {
+  font-size: 1.1em;
+}

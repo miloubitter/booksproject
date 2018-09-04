@@ -1,0 +1,29 @@
+// ======================================
+//  Table Styles
+// ======================================
+
+@import "colors";
+
+table {
+  tr {
+    &:hover{
+      cursor: pointer;
+      background: $bc_blue;
+      color: $bc_yellow;
+    }
+  }
+}
+
+.book-listing{
+  margin-top: 50px;
+  width: 1000px;
+  //border-spacing: 0;
+}
+.book-listing th{
+  text-align: left;
+  border-bottom: solid 1px #555555;
+}
+
+.book-listing th, td{
+  padding: 10px;
+}
