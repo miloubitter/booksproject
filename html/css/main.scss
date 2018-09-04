@@ -12,6 +12,16 @@ body{
   padding: 0;
 }
 
+.updateTextField{
+  width: 450px;
+  height: 32px;
+}
+
+.newTextField {
+  width: 540px;
+  height: 38px;
+}
+
 h1 {
   font-size: 2.0em;
   font-weight: bold ;
@@ -26,7 +36,6 @@ h2 {
 }
 
 h3 {
-  color: $bc_yellow;
 }
 
 .intro {

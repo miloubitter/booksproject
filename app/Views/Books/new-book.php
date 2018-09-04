@@ -37,7 +37,7 @@
             <br clear="all" />
 
             <button type="submit" class="btn btn-info float-md-right">Save</button>
-            <button type="button" class="btn btn-light float-sm-left" onclick="window.location = '?route=index'"><i class="fa fa-caret-left"></i> Back</button>
+            <button type="button" class="btn btn-secondary float-sm-left" onclick="window.location = '?route=index'"><i class="fa fa-caret-left"></i> Back</button>
 
     </form>
     <br clear="all" />

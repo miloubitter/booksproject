@@ -1,10 +1,10 @@
 <br/>
-<h1 class="mt-5"><?php echo $viewModel['pageTitle']?></h1>
 <div class="container">
+    <h1 class="mt-5" style="text-align: left"><?php echo $viewModel['pageTitle']?></h1> <br />
     <form novalidate id="updateBookForm">
         <div class="form-row">
         <label for="title">Title</label>
-        <input type="text" name="title" id="title" value="<?php echo $viewModel['book']['title']?>" required/>
+        <input type="text" name="title" class="updateTextField" id="title" value="<?php echo $viewModel['book']['title']?>" required/>
         </div>
 
         <div class="form-row authorRow">
@@ -17,12 +17,12 @@
 
         <div class="form-row">
         <label for="isbn">ISBN</label>
-        <input type="text" name="isbn" id="isbn" value="<?php echo $viewModel['book']['isbn']?>" required/>
+        <input type="text" name="isbn" class="updateTextField" id="isbn" value="<?php echo $viewModel['book']['isbn']?>" required/>
         </div>
 
         <div class="form-row">
         <label for="price">Price</label>
-        <input type="text" name="price" id="price" value="<?php echo $viewModel['book']['price']?>" required />
+        <input type="text" name="price" class="updateTextField" id="price" value="<?php echo $viewModel['book']['price']?>" required />
         </div>
 
         <div class="form-description">

@@ -61,6 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const authorSelectField = document.createElement('select');
             authorSelectField.setAttribute('id', 'author');
             authorSelectField.setAttribute('name', 'author');
+            authorSelectField.setAttribute('class', 'newTextField');
 
             for (i = 0; i < authors.length; i++) {
                 let authorSelect = document.createElement('option');
@@ -85,6 +86,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const categorySelectField = document.createElement('select');
             categorySelectField.setAttribute('id', 'category');
             categorySelectField.setAttribute('name', 'category');
+            categorySelectField.setAttribute('class', 'newTextField');
 
             for (i = 0; i < categories.length; i++) {
                 let categorySelect = document.createElement('option');

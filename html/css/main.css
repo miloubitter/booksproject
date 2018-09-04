@@ -72,6 +72,16 @@ body {
   padding: 0;
 }
 
+.updateTextField {
+  width: 450px;
+  height: 32px;
+}
+
+.newTextField {
+  width: 540px;
+  height: 38px;
+}
+
 h1 {
   font-size: 2em;
   font-weight: bold;
@@ -82,10 +92,6 @@ h1 {
 
 h2 {
   text-align: center;
-  color: #f4f142;
-}
-
-h3 {
   color: #f4f142;
 }
 
