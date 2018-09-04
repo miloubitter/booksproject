@@ -195,19 +195,35 @@ class BookController extends BaseController
     {
         $author = new Book();
 
-
-
         $viewModel = [
             'pageTitle' => "Biography",
             'author' => $author->oneAuthor($id),
-//            'categories'=> $category->all(),
-            'authors' => $author->authors($id),
+            'authors' => $author->authors(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()
         ];
 
         $this->renderWebView('/Books/author-details', $viewModel);
+    }
+
+    public function allCategories($id = 0)
+
+    {
+        $category = new Book();
+
+
+        $viewModel = [
+            'pageTitle' => "Category",
+            'categories'=> $category->categories(),
+            'category' => $category->getCategoryById($id),
+            'errors' => $this->getErrors(),
+            'messages' => $this->getMessages(),
+            'profile' => Authentication::getProfile()
+
+        ];
+
+        view('/Books/categories', $viewModel);
     }
 
 }

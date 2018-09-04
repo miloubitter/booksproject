@@ -55,10 +55,13 @@ if($route == 'index') {
 
 //    ****** Authors ******
 } else if ($route == "authorShow" && $method == "GET") {
-        $bookController = new BookController();
-        $bookController->allAuthors($id);
+    $bookController = new BookController();
+    $bookController->allAuthors($id);
 
 //    ****** Categories ******
+}else if ($route == "categoryShow" && $method == "GET") {
+    $bookController = new BookController();
+    $bookController->allCategories($id);
 
 //    ****** Login ******
 } elseif ($route == "login" && $method == "GET") {

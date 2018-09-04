@@ -165,7 +165,7 @@ class Book extends Database
         return $this->getAll("SELECT * FROM {$this->category_table}");
     }
 
-    public function authors($id=0)
+    public function authors()
     {
         return $this->getAll("SELECT * FROM {$this->author_table}");
     }
@@ -178,5 +178,13 @@ class Book extends Database
                                     FROM authors
                                     JOIN books ON books.author_id = authors.id
                                     WHERE authors.id = :id;", ['id' => $id]);
+    }
+
+    public function getCategoryById($id) {
+        $parameters = array(
+            'id' => $id
+        );
+
+        return $this->getOne("SELECT * FROM {$this->category_table} WHERE {$this->primary_key} = :id", $parameters);
     }
 }

@@ -30,7 +30,7 @@
 }
 
 .jumbotron {
-  background-image: url("https://images.pexels.com/photos/1106468/pexels-photo-1106468.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-image: url("https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
   margin: 0;
   text-shadow: 1px 1px black;
@@ -38,6 +38,14 @@
 .jumbotronImage {
   background-image: url("https://images.pexels.com/photos/8264/pexels-photo.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
   background-size: cover;
+  margin: 0;
+  text-shadow: 1px 1px black;
+}
+
+.jumbotronCategory {
+  background-image: url("https://images.pexels.com/photos/1112048/pexels-photo-1112048.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: cover;
+  background-position: center center;
   margin: 0;
   text-shadow: 1px 1px black;
 }
