@@ -165,8 +165,18 @@ class Book extends Database
         return $this->getAll("SELECT * FROM {$this->category_table}");
     }
 
-    public function authors()
+    public function authors($id=0)
     {
         return $this->getAll("SELECT * FROM {$this->author_table}");
+    }
+
+    public function oneAuthor($id = 0)
+    {
+        return $this->getOne("SELECT authors.*, 
+                                    books.id
+                                    AS blog_id
+                                    FROM authors
+                                    JOIN books ON books.author_id = authors.id
+                                    WHERE authors.id = :id;", ['id' => $id]);
     }
 }

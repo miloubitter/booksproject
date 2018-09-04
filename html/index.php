@@ -53,6 +53,12 @@ if($route == 'index') {
     $bookController = new BookController();
     $bookController->uploadImage($id);
 
+//    ****** Authors ******
+} else if ($route == "authorShow" && $method == "GET") {
+        $bookController = new BookController();
+        $bookController->allAuthors($id);
+
+//    ****** Categories ******
 
 //    ****** Login ******
 } elseif ($route == "login" && $method == "GET") {
