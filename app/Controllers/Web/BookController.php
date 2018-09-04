@@ -50,7 +50,7 @@ class BookController extends BaseController
             'profile' => Authentication::getProfile()
         ];
 
-        $this->renderWebView('/Books/startPage', $viewModel);
+        $this->renderWebView('/Books/start-page', $viewModel);
     }
 
     public function allBooks()
@@ -65,7 +65,7 @@ class BookController extends BaseController
             'profile' => Authentication::getProfile()
         ];
 
-        $this->renderWebView('/Books/allBooks', $viewModel);
+        $this->renderWebView('/Books/all-books', $viewModel);
     }
 
     public function show($id = 0)

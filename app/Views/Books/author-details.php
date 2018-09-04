@@ -21,7 +21,7 @@
                     foreach($viewModel['authors'] as $id=>$author){
                         echo "
                         <tr>
-                            <td >{$author['name']}</a></td>
+                            <td >{$author['name']}</td>
                             <td >{$author['bio']}</td>
                         </tr>
                         ";
