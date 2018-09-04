@@ -20,7 +20,11 @@ const getOneBook = (bookId) => {
 };
 const getAuthors = () => {
     return $.get(env.api + '?route=authors');
-}
+};
+
+const getCategories = () => {
+    return $.get(env.api + '?route=categories');
+};
 
 //FormValidation
 const fieldValidation = (event) => {

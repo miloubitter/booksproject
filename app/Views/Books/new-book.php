@@ -13,9 +13,8 @@
                     <label for="author_id">Author</label> <br/>
                 </div>
 
-                <div class="form-group">
-                    <label for="category_id">Category</label>
-                    <input type="number" name="category_id" id="category_id" class="form-control" required/>
+                <div class="form-group categoryRow">
+                    <label for="category_id">Category</label> <br />
                 </div>
 
                 <div class="form-group">

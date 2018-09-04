@@ -37,11 +37,14 @@ $method = $_SERVER['REQUEST_METHOD'];
     }else if ($route === 'delete' && $method === 'POST') {
         $bookController = new BookController();
         $bookController->deleteBook();
-    }
-
-    else if ($route === 'authors') {
+    //   *** Authors ***
+    } else if ($route === 'authors') {
         $bookController = new BookController();
         $bookController->getAuthors();
+    //   ***Categories***
+    } else if ($route === 'categories') {
+        $bookController = new BookController();
+        $bookController->getCategories();
     }
 
     else if ($route === 'votes')
