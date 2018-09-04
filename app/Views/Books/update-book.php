@@ -26,7 +26,7 @@
         </div>
 
         <div class="form-description">
-        <label for="description">Description</label>
+        <label for="description">Summary</label>
         <textarea id="description" name="description"><?php echo $viewModel['book']['description']?></textarea>
         </div>
 

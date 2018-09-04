@@ -9,18 +9,6 @@ class Book extends Database
     private $author_table = "authors";
     private $category_table = "categories";
     private $primary_key = "id";
-    private $fillable_columns = [
-        'category_id',
-        'author_id',
-        'title',
-        'description',
-        'price',
-        'isbn',
-        'bio',
-        'name',
-        'created_at',
-        'updated_at'];
-
     public $sort_column = [];
     public $sort_direction = [];
 
@@ -69,7 +57,7 @@ class Book extends Database
             $columns['id'] = $id;
             $columns['updated_at'] = date("Y-m-d H:i:s");
             $this->execute("
-          UPDATE {$this->table_name} SET 
+          UPDATE books SET 
             category_id = :category_id,
             author_id = :author_id,
             title = :title,
@@ -77,7 +65,7 @@ class Book extends Database
             description = :description,
             price = :price,
             updated_at = :updated_at
-           WHERE {$this->primary_key} = :id
+           WHERE books.id = :id
          ", $columns);
         }
         else
@@ -85,7 +73,7 @@ class Book extends Database
             //insert
                 $columns['created_at'] = date("Y-m-d H:i:s");
                 $return = $this->execute(" 
-          INSERT INTO {$this->table_name}(category_id,author_id,title,isbn,description,price,created_at)
+          INSERT INTO books (category_id,author_id,title,isbn,description,price,created_at)
           VALUES(
             :category_id, 
             :author_id,
@@ -105,7 +93,7 @@ class Book extends Database
     public function delete($id = null)
     {
         if (!empty($id)){
-            $return =$this->execute("DELETE FROM {$this->table_name} WHERE {$this->primary_key}= :id", ['id' => $id]);
+            $return =$this->execute("DELETE FROM books WHERE books.id= :id", ['id' => $id]);
         }
 
             return true;

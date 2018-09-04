@@ -29,7 +29,7 @@
             </div>
             <div class="col-xs-12 col-md-6">
                 <div class="form-group description-wrapper" >
-                    <label for="description">Description</label>
+                    <label for="description">Summary</label>
                     <textarea id="description" name="description" class="form-control"></textarea>
                 </div>
             </div>

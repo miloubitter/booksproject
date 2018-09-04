@@ -29,6 +29,15 @@
   height: 200px;
 }
 
+.description-wrapper {
+  textarea {
+    height: 400px;
+  }
+  a {
+    color:green;
+  }
+}
+
 .form-submit{
   margin-top: 20px;
 }
