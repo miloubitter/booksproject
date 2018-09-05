@@ -84,7 +84,7 @@ const appendSuccessMessage = (message, elementSelector) => {
 
 function upVote(id){
     $.ajax ({
-        url: "http://localhost/booksOOP/api/?route=votes&id=" + id,
+        url: "http://localhost/booksproject/api/?route=votes&id=" + id,
         type: "POST"
     }).done(function (data) {
         if (data) {
@@ -98,7 +98,7 @@ function upVote(id){
 
 function downVote(id){
     $.ajax ({
-        url: "http://localhost/booksOOP/api/?route=votes&id=" + id,
+        url: "http://localhost/booksproject/api/?route=votes&id=" + id,
         type: "DELETE"
     }).done(function (data) {
         if (data) {
@@ -112,7 +112,7 @@ function downVote(id){
 
 function getVotes(id){
     $.ajax ({
-        url: "http://localhost/booksOOP/api/?route=votes&id=" + id,
+        url: "http://localhost/booksproject/api/?route=votes&id=" + id,
         type: "GET"
     }).done(function (data) {
         if (data) {
