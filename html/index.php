@@ -59,9 +59,9 @@ if($route == 'index') {
     $bookController->oneAuthor($id);
 
 //    ****** Categories ******
-}else if ($route == "categoryShow" && $method == "GET") {
+}else if ($route == "categoryDetailsShow" && $method == "GET") {
     $bookController = new BookController();
-    $bookController->allCategories($id);
+    $bookController->oneCategory($id);
 
 //    ****** Login ******
 } elseif ($route == "login" && $method == "GET") {

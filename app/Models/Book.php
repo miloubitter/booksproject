@@ -195,7 +195,8 @@ class Book extends Database
 //                                    WHERE {$this->author_table}.{$this->primary_key} = :id;", ['id' => $id]);
 //    }
 
-    public function getCategoryById($id) {
+    public function getCategoryById($id = 0)
+    {
         $parameters = array(
             'id' => $id
         );
