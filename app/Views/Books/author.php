@@ -1,7 +1,7 @@
 <div class="jumbotron jumbotronImage jumbotron-fluid my-5">
     <div class="container pt-4">
-        <h1 class="display-4 texth1 text-center">Biografie van <?php echo $viewModel['author']['name'] ?></h1>
-        <p class="lead textP text-center"> <br /> <br /></p>
+        <h1 class="display-4 texth1 text-center">Biografie van: </h1>
+        <p class="lead textP text-center" style="font-size: 25pt"> <?php echo $viewModel['author']['name'] ?></p>
     </div>
 </div>
 
