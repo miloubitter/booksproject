@@ -54,9 +54,9 @@ if($route == 'index') {
     $bookController->uploadImage($id);
 
 //    ****** Authors ******
-} else if ($route == "authorShow" && $method == "GET") {
+} else if ($route == "authorDetailsShow" && $method == "GET") {
     $bookController = new BookController();
-    $bookController->allAuthors($id);
+    $bookController->oneAuthor($id);
 
 //    ****** Categories ******
 }else if ($route == "categoryShow" && $method == "GET") {

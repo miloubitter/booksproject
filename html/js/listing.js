@@ -70,7 +70,7 @@ $(document).ready(() => {
                 isbnCol.setAttribute('class','d-none d-sm-table-cell');
 
                 const priceCol = document.createElement('td');
-                priceCol.textContent =books[i].price;
+                priceCol.textContent ='€' + books[i].price;
 
                 row.appendChild(imageCol);
                 row.appendChild(titleCol);

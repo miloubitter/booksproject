@@ -19,7 +19,9 @@
                             <p><u><b>Did you like the book?</b></u></p>
                             <a class="up-vote" href="#"><i class="far fa-thumbs-up" style="color: limegreen"></i></a>
                             <a class="down-vote" href="#"><i class="far fa-thumbs-down" style="color: red"></i></a>
-                            <div class="vote-count" data-id=" <?php echo $viewModel['book']['id']?>"><b><?php echo $viewModel['book']['votes']?></b> readers liked this book </div> <br/>
+                            <div>
+                                <span class="vote-count" style="font-weight: bold" data-id=" <?php echo $viewModel['book']['id']?>"><?php echo $viewModel['book']['votes']?></span> readers liked this book <br/>
+                            </div>
                         </div>
 
                         <?php if ($viewModel['profile']) { ?>

@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset ="utf-8">
-    <title><?php echo $viewModel['pageTitle']?></title>
+    <title>Milou's Bookstore</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -32,19 +32,17 @@
             <li class="nav-item active">
                 <a class="nav-link link" href="?route=allbooks">Books <span class="sr-only">(current)</span></a>
             </li>
-            <li class="nav-item active">
-                <a class="nav-link link" href="?route=authorShow">Authors <span class="sr-only">(current)</span></a>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Authors
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <?php foreach ($viewModel['authors'] as $lol => $author){?>
+                        <a class="dropdown-item lower" href="?route=authorDetailsShow&id=<?php echo $author['id']?>"><?php echo $author['name']?></a>
+                    <?php } ?>
+                </div>
             </li>
-<!--            <li class="nav-item dropdown">-->
-<!--                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">-->
-<!--                    Authors-->
-<!--                </a>-->
-<!--                <div class="dropdown-menu" aria-labelledby="navbarDropdown">-->
-<!--                    --><?php //foreach ($viewModel['authors'] as $lol => $author){ ?>
-<!--                        <a class="dropdown-item lower" href="?route=authorShow&id=--><?php //echo $author['id']?><!--">--><?php //echo $author['name']?><!--</a>-->
-<!--                    --><?php //} ?>
-<!--                </div>-->
-<!--            </li>-->
             <li class="nav-item active">
                 <a class="nav-link link" href="?route=categoryShow">Categories <span class="sr-only">(current)</span></a>
             </li>

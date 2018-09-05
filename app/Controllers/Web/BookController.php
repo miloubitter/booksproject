@@ -30,6 +30,7 @@ class BookController extends BaseController
         $viewModel = [
             'pageTitle' => "Contact",
             'books' => $book->all(),
+            'authors' => $book->authors(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()
@@ -44,6 +45,7 @@ class BookController extends BaseController
 
         $viewModel = [
             'pageTitle' => "Book Catalog",
+            'authors' => $book->authors(),
             'books' => $book->getTopFiveBooks(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
@@ -60,6 +62,7 @@ class BookController extends BaseController
         $viewModel = [
             'pageTitle' => "Book Catalog",
             'books' => $book->all(),
+            'authors' => $book->authors(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()
@@ -81,6 +84,7 @@ class BookController extends BaseController
             'pageTitle' => "Books",
             'book' => $book->one($id),
             'errors' => $this->getErrors(),
+            'authors' => $book->authors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile(),
             'imagePath' => $imagePath
@@ -95,6 +99,7 @@ class BookController extends BaseController
         $viewModel = [
             'pageTitle' => "Edit book",
             'book' => $book->one($id),
+            'authors' => $book->authors(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile(),
@@ -109,6 +114,7 @@ class BookController extends BaseController
             $viewModel = [
                 'pageTitle' => "Create a book",
                 'errors' => $this->getErrors(),
+                'authors' => $this->authors(),
                 'messages' => $this->getMessages(),
                 'profile' => Authentication::getProfile()
             ];
@@ -190,7 +196,23 @@ class BookController extends BaseController
         }
     }
 
-    public function allAuthors($id = 0)
+    public function allAuthors()
+
+    {
+        $author = new Book();
+
+        $viewModel = [
+            'pageTitle' => "Biography",
+            'authors' => $author->authors(),
+            'errors' => $this->getErrors(),
+            'messages' => $this->getMessages(),
+            'profile' => Authentication::getProfile()
+        ];
+
+        $this->renderWebView('/Books/author-details', $viewModel);
+    }
+
+    public function oneAuthor($id=0)
 
     {
         $author = new Book();
@@ -198,13 +220,13 @@ class BookController extends BaseController
         $viewModel = [
             'pageTitle' => "Biography",
             'author' => $author->oneAuthor($id),
-            'authors' => $author->authors($id),
+            'authors' => $author->authors(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()
         ];
 
-        $this->renderWebView('/Books/author-details', $viewModel);
+        $this->renderWebView('/Books/author', $viewModel);
     }
 
     public function allCategories($id = 0)
@@ -216,6 +238,7 @@ class BookController extends BaseController
         $viewModel = [
             'pageTitle' => "Category",
             'categories'=> $category->categories(),
+            'authors' => $category->authors(),
             'category' => $category->getCategoryById($id),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
