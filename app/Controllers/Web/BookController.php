@@ -116,8 +116,12 @@ class BookController extends BaseController
 
     public function create()
     {
-            $viewModel = [
+        $book = new Book();
+
+        $viewModel = [
                 'pageTitle' => "Create a book",
+                'authors' => $book->authors(),
+                'categories'=> $book->categories(),
                 'errors' => $this->getErrors(),
                 'messages' => $this->getMessages(),
                 'profile' => Authentication::getProfile()
