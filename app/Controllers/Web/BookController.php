@@ -221,25 +221,6 @@ class BookController extends BaseController
 //        $this->renderWebView('/Books/author-details', $viewModel);
 //    }
 
-//    public function all($id = 0)
-//    {
-//        return $this->getAll("SELECT {$this->author_table}.*,
-//                                    {$this->table_name}.title,
-//                                    substr({$this->table_name}.body, 1, 300) AS intro,
-//                                    {$this->table_name}.updated_at,
-//                                    {$this->category_table}.name
-//                                    AS category,
-//                                    {$this->category_table}.id
-//                                    AS category_id,
-//                                    {$this->table_name}.{$this->primary_key}
-//                                    AS blog_id,
-//                                    {$this->table_name}.image_filename,
-//                                    {$this->author_table}.author_filename
-//                                    FROM {$this->author_table}
-//                                    JOIN {$this->table_name} ON {$this->table_name}.author_id = {$this->author_table}.id
-//                                    JOIN {$this->category_table} ON {$this->table_name}.category_id = {$this->category_table}.id
-//                                    WHERE {$this->author_table}.{$this->primary_key} = :id ORDER BY {$this->table_name}.updated_at DESC LIMIT 3;", ['id' => $id]);
-//    }
 
     public function oneAuthor($id=0)
 

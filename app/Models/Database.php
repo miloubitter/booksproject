@@ -6,6 +6,7 @@ use PDO;
 
 class Database {
 
+/** @var PDO */
     private $conn;
     private $host;
     private $user;
@@ -14,7 +15,6 @@ class Database {
     private $port;
 
    public function __construct($params=[]) {
-        $this->conn = false;
         $this->host = getenv('DB_HOST'); //hostname
         $this->user = getenv('DB_USERNAME'); //username
         $this->password = getenv('DB_PASSWORD'); //password
@@ -30,7 +30,7 @@ class Database {
 
     public function connect() {
         if (!$this->conn) {
-            $this->conn = new \PDO('mysql:host='.$this->host.';dbname='.$this->baseName.'', $this->user, $this->password, array(\PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
+            $this->conn = new PDO('mysql:host='.$this->host.';dbname='.$this->baseName.'', $this->user, $this->password, array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8'));
             $this->conn->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
         }
 
@@ -46,7 +46,7 @@ class Database {
     public function getOne($query, $params) {
         $result = $this->conn->prepare($query);
         $ret = $result->execute($params);
-        $result->setFetchMode(\PDO::FETCH_ASSOC);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
         $response = $result->fetch();
 
         return $response;
@@ -55,7 +55,7 @@ class Database {
     public function getAll($query, $params =[]) {
         $result = $this->conn->prepare($query);
         $ret = $result->execute($params);
-        $result->setFetchMode(\PDO::FETCH_ASSOC);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
         $response = $result->fetchAll();
 
         return $response;
