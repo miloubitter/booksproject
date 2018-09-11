@@ -230,7 +230,7 @@ class BookController extends BaseController
         $viewModel = [
             'pageTitle' => "Biography",
             'author' => $author->oneAuthor($id),
-            'books' => $author->all(),
+            'books' => $author->getAllBooksByAuthor($id),
             'authors' => $author->authors(),
             'categories'=> $author->categories(),
             'errors' => $this->getErrors(),

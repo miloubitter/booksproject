@@ -37,6 +37,32 @@ class Book extends Database
            return $this->getAll($sql);
     }
 
+    public function getAllBooksByAuthor($authorId)
+    {
+        $sql = "SELECT
+                    books.id as id,
+                    books.category_id as category_id,
+                    books.author_id as author_id,
+                    books.title as title,
+                    substr(books.description,1,400) as intro,
+                    books.description as description,
+                    books.price as price,
+                    books.isbn as isbn,
+                    books.created_at as created_at,
+                    books.updated_at as updated_at,
+                    books.image_filename as image_filename,
+                    books.votes as votes,
+                    authors.name as author_name,
+                    categories.name as category_name
+                FROM
+                    books
+                    left join authors on (authors.id = books.author_id)
+                    left join categories on (categories.id = books.category_id)
+                WHERE authors.id = :id";
+        $parameters = ['id' => $authorId];
+        return $this->getAll($sql, $parameters);
+    }
+
     public function one($id = 0)
     {
         return $this->getOne("  SELECT 
@@ -196,27 +222,6 @@ class Book extends Database
 //                                    JOIN {$this->category_table} ON {$this->table_name}.category_id = {$this->category_table}.id
 //                                    WHERE {$this->author_table}.{$this->primary_key} = :id;", ['id' => $id]);
 //    }
-
-//    public function all($id = 0)
-//    {
-//        return $this->getAll("SELECT {$this->author_table}.*,
-//                                    {$this->table_name}.title,
-//                                    substr({$this->table_name}.body, 1, 300) AS intro,
-//                                    {$this->table_name}.updated_at,
-//                                    {$this->category_table}.name
-//                                    AS category,
-//                                    {$this->category_table}.id
-//                                    AS category_id,
-//                                    {$this->table_name}.{$this->primary_key}
-//                                    AS blog_id,
-//                                    {$this->table_name}.image_filename,
-//                                    {$this->author_table}.author_filename
-//                                    FROM {$this->author_table}
-//                                    JOIN {$this->table_name} ON {$this->table_name}.author_id = {$this->author_table}.id
-//                                    JOIN {$this->category_table} ON {$this->table_name}.category_id = {$this->category_table}.id
-//                                    WHERE {$this->author_table}.{$this->primary_key} = :id ORDER BY {$this->table_name}.updated_at DESC LIMIT 3;", ['id' => $id]);
-//    }
-
 
     public function getCategoryById($id = 0)
     {
