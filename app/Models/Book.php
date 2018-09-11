@@ -63,6 +63,31 @@ class Book extends Database
         return $this->getAll($sql, $parameters);
     }
 
+    public function getAllBooksByCategory($categoryId)
+    {
+        $sql = "SELECT
+                    books.id as id,
+                    books.category_id as category_id,
+                    books.author_id as author_id,
+                    books.title as title,
+                    substr(books.description,1,400) as intro,
+                    books.description as description,
+                    books.price as price,
+                    books.isbn as isbn,
+                    books.created_at as created_at,
+                    books.updated_at as updated_at,
+                    books.image_filename as image_filename,
+                    books.votes as votes,
+                    authors.name as author_name,
+                    categories.name as category_name
+                FROM
+                    books
+                    left join authors on (authors.id = books.author_id)
+                    left join categories on (categories.id = books.category_id)
+                WHERE categories.id = :id";
+        $parameters = ['id' => $categoryId];
+        return $this->getAll($sql, $parameters);
+    }
     public function one($id = 0)
     {
         return $this->getOne("  SELECT 

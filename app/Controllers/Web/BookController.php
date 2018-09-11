@@ -272,7 +272,7 @@ class BookController extends BaseController
             'pageTitle' => "Category",
             'categories'=> $category->categories(),
             'category' => $category->getCategoryById($id),
-            'books' => $category->all(),
+            'books' => $category->getAllBooksByCategory($id),
             'authors' => $category->authors(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
