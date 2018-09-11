@@ -19,6 +19,7 @@ class Book extends Database
                     books.category_id as category_id,
                     books.author_id as author_id,
                     books.title as title,
+                    substr(books.description,1,400) as intro,
                     books.description as description,
                     books.price as price,
                     books.isbn as isbn,
@@ -169,6 +170,7 @@ class Book extends Database
     {
         return $this->getAll("SELECT * FROM {$this->author_table}");
     }
+
 
     public function oneAuthor($id = 0)
     {

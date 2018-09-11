@@ -44,10 +44,6 @@ h3 {
   text-align: center;
 }
 
-.linkDetail {
-  color: #add8e6;
-}
-
 button {
   font-size: 1.1em;
 }
@@ -153,6 +149,14 @@ table .tablerow:hover {
 .fa-facebook-square {
   font-size: 30pt;
   color: royalblue;
+}
+
+.linkDetail {
+  color: #add8e6;
+}
+
+.linkCategory {
+  color: #f4f142;
 }
 
 .navbar {
