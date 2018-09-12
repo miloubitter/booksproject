@@ -27,3 +27,8 @@ table {
 .book-listing th, td{
   padding: 10px;
 }
+
+.scrollable {
+  height: 700px;
+  overflow: scroll;
+}

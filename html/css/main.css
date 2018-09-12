@@ -141,6 +141,11 @@ table .tablerow:hover {
   padding: 10px;
 }
 
+.scrollable {
+  height: 700px;
+  overflow: scroll;
+}
+
 .fa-linkedin:before {
   font-size: 30pt;
   color: dodgerblue;
