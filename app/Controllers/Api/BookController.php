@@ -4,7 +4,9 @@ namespace App\Controllers\Api;
 
 
 use App\Controllers\BaseController;
+use App\Models\Author;
 use App\Models\Book;
+use App\Models\Category;
 
 class BookController extends BaseController
 {
@@ -66,13 +68,13 @@ class BookController extends BaseController
     }
 
     public function getCategories() {
-        $bookModel = new Book();
+        $bookModel = new Category();
         $books = $bookModel->categories();
         $this->renderJson(200, $books);
     }
 
     public function getAuthors() {
-        $bookModel = new Book();
+        $bookModel = new Author();
         $books = $bookModel->authors();
         $this->renderJson(200, $books);
     }
