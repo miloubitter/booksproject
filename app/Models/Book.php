@@ -6,8 +6,6 @@ namespace App\Models;
 class Book extends Database
 {
     private $table_name = "books";
-    private $author_table = "authors";
-    private $category_table = "categories";
     private $primary_key = "id";
     public $sort_column = [];
     public $sort_direction = [];
@@ -212,48 +210,4 @@ class Book extends Database
         return $this->getAll($sql);
     }
 
-    public function categories()
-    {
-        return $this->getAll("SELECT * FROM {$this->category_table}");
-    }
-
-    public function authors()
-    {
-        return $this->getAll("SELECT * FROM {$this->author_table}");
-    }
-
-
-    public function oneAuthor($id = 0)
-    {
-        return $this->getOne("SELECT authors.*,
-                                    books.id
-                                    AS blog_id
-                                    FROM authors
-                                    JOIN books ON books.author_id = authors.id
-                                    WHERE authors.id = :id;", ['id' => $id]);
-    }
-
-//    public function oneAuthor($id = 0)
-//    {
-//        return $this->getOne("SELECT {$this->author_table}.*,
-//                                    {$this->table_name}.title,
-//                                    {$this->table_name}description,
-//                                     {$this->category_table}.name
-//                                    AS category,
-//                                    {$this->table_name}.{$this->primary_key}
-//                                    AS blog_id
-//                                    FROM {$this->author_table}
-//                                    JOIN {$this->table_name} ON {$this->table_name}.author_id = {$this->author_table}.id
-//                                    JOIN {$this->category_table} ON {$this->table_name}.category_id = {$this->category_table}.id
-//                                    WHERE {$this->author_table}.{$this->primary_key} = :id;", ['id' => $id]);
-//    }
-
-    public function getCategoryById($id = 0)
-    {
-        $parameters = array(
-            'id' => $id
-        );
-
-        return $this->getOne("SELECT * FROM {$this->category_table} WHERE {$this->primary_key} = :id", $parameters);
-    }
 }

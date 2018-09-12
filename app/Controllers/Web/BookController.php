@@ -4,7 +4,9 @@ namespace App\Controllers\Web;
 
 
 use App\Controllers\BaseController;
+use App\Models\Author;
 use App\Models\Book;
+use App\Models\Category;
 use Gumlet\ImageResize;
 use Infrastructure\Authentication;
 
@@ -26,12 +28,14 @@ class BookController extends BaseController
     public function showContact()
     {
         $book = new Book();
+        $author = new Author();
+        $category = new Category();
 
         $viewModel = [
             'pageTitle' => "Contact",
             'books' => $book->all(),
-            'authors' => $book->authors(),
-            'categories'=> $book->categories(),
+            'authors' => $author->authors(),
+            'categories'=> $category->categories(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()
@@ -43,11 +47,13 @@ class BookController extends BaseController
     public function index()
     {
         $book = new Book();
+        $author = new Author();
+        $category = new Category();
 
         $viewModel = [
             'pageTitle' => "Book Catalog",
-            'authors' => $book->authors(),
-            'categories'=> $book->categories(),
+            'authors' => $author->authors(),
+            'categories'=> $category->categories(),
             'books' => $book->getTopFiveBooks(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
@@ -60,12 +66,14 @@ class BookController extends BaseController
     public function allBooks()
     {
         $book = new Book();
+        $author = new Author();
+        $category = new Category();
 
         $viewModel = [
             'pageTitle' => "Book Catalog",
             'books' => $book->all(),
-            'authors' => $book->authors(),
-            'categories'=> $book->categories(),
+            'authors' => $author->authors(),
+            'categories'=> $category->categories(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()
@@ -77,6 +85,8 @@ class BookController extends BaseController
     public function show($id = 0)
     {
         $book = new Book();
+        $author = new Author();
+        $category = new Category();
 
         $imagePath = '';
         if (file_exists(__DIR__ . '/../../../html/images/' . $id . '.jpg')) {
@@ -87,8 +97,8 @@ class BookController extends BaseController
             'pageTitle' => "Books",
             'book' => $book->one($id),
             'errors' => $this->getErrors(),
-            'authors' => $book->authors(),
-            'categories'=> $book->categories(),
+            'authors' => $author->authors(),
+            'categories'=> $category->categories(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile(),
             'imagePath' => $imagePath
@@ -99,12 +109,14 @@ class BookController extends BaseController
  public function edit($id = 0)
     {
         $book = new Book();
+        $author = new Author();
+        $category = new Category();
 
         $viewModel = [
             'pageTitle' => "Edit book",
             'book' => $book->one($id),
-            'authors' => $book->authors(),
-            'categories'=> $book->categories(),
+            'authors' => $author->authors(),
+            'categories'=> $category->categories(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile(),
@@ -116,12 +128,13 @@ class BookController extends BaseController
 
     public function create()
     {
-        $book = new Book();
+        $author = new Author();
+        $category = new Category();
 
         $viewModel = [
                 'pageTitle' => "Create a book",
-                'authors' => $book->authors(),
-                'categories'=> $book->categories(),
+                'authors' => $author->authors(),
+                'categories'=> $category->categories(),
                 'errors' => $this->getErrors(),
                 'messages' => $this->getMessages(),
                 'profile' => Authentication::getProfile()
@@ -204,35 +217,19 @@ class BookController extends BaseController
         }
     }
 
-//    public function allAuthors()
-//
-//    {
-//        $author = new Book();
-//
-//        $viewModel = [
-//            'pageTitle' => "Biography",
-//            'authors' => $author->authors(),
-//            'categories'=> $author->categories(),
-//            'errors' => $this->getErrors(),
-//            'messages' => $this->getMessages(),
-//            'profile' => Authentication::getProfile()
-//        ];
-//
-//        $this->renderWebView('/Books/author-details', $viewModel);
-//    }
-
-
     public function oneAuthor($id=0)
 
     {
-        $author = new Book();
+        $book = new Book();
+        $author = new Author();
+        $category = new Category();
 
         $viewModel = [
             'pageTitle' => "Biography",
             'author' => $author->oneAuthor($id),
-            'books' => $author->getAllBooksByAuthor($id),
+            'books' => $book->getAllBooksByAuthor($id),
             'authors' => $author->authors(),
-            'categories'=> $author->categories(),
+            'categories'=> $category->categories(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()
@@ -244,14 +241,15 @@ class BookController extends BaseController
     public function allCategories($id = 0)
 
     {
-        $category = new Book();
-
+        $book = new Book();
+        $author = new Author();
+        $category = new Category();
 
         $viewModel = [
             'pageTitle' => "Category",
             'categories'=> $category->categories(),
-            'books' => $category->all(),
-            'authors' => $category->authors(),
+            'books' => $book->all(),
+            'authors' => $author->authors(),
             'category' => $category->getCategoryById($id),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
@@ -265,15 +263,16 @@ class BookController extends BaseController
     public function oneCategory($id = 0)
 
     {
-        $category = new Book();
-
+        $book = new Book();
+        $author = new Author();
+        $category = new Category();
 
         $viewModel = [
             'pageTitle' => "Category",
             'categories'=> $category->categories(),
             'category' => $category->getCategoryById($id),
-            'books' => $category->getAllBooksByCategory($id),
-            'authors' => $category->authors(),
+            'books' => $book->getAllBooksByCategory($id),
+            'authors' => $author->authors(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()
