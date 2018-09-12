@@ -3,20 +3,22 @@
 namespace App\Controllers\Web;
 
 use App\Controllers\BaseController;
+use App\Models\Author;
 use App\Models\Book;
+use App\Models\Category;
 use Infrastructure\Authentication;
 
 class LoginController extends BaseController
 {
     public function show() : void
     {
-        $book = new Book();
-
+        $author = new Author();
+        $category = new Category();
 
         $viewModel = [
             'pageTitle' => 'Login',
-            'authors' => $book->authors(),
-            'categories'=> $book->categories(),
+            'authors' => $author->authors(),
+            'categories'=> $category->categories(),
             'errors' => $this->getErrors(),
             'messages' => $this->getMessages(),
             'profile' => Authentication::getProfile()
