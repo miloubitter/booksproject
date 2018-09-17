@@ -1,6 +1,9 @@
 <?php
 
+use App\Controllers\Web\AuthorController;
 use App\Controllers\Web\BookController;
+use App\Controllers\Web\CategoryController;
+use App\Controllers\Web\ContactController;
 use App\Controllers\Web\LoginController;
 use Dotenv\Dotenv;
 
@@ -31,10 +34,10 @@ if($route == 'index') {
     $bookController = new BookController();
     $bookController->allBooks();
 
+//    ******  Contact ******
 } else if($route == 'contact') {
-    $bookController = new BookController();
-    $bookController->showContact();
-
+    $contactController = new ContactController();
+    $contactController->showContact();
 
 //    ******  Books ******
 } else if($route == 'show' && $method=='GET') {
@@ -55,13 +58,13 @@ if($route == 'index') {
 
 //    ****** Authors ******
 } else if ($route == "authorDetailsShow" && $method == "GET") {
-    $bookController = new BookController();
-    $bookController->oneAuthor($id);
+    $authorController = new AuthorController();
+    $authorController->oneAuthor($id);
 
 //    ****** Categories ******
 }else if ($route == "categoryDetailsShow" && $method == "GET") {
-    $bookController = new BookController();
-    $bookController->oneCategory($id);
+    $categoryController = new CategoryController();
+    $categoryController->oneCategory($id);
 
 //    ****** Login ******
 } elseif ($route == "login" && $method == "GET") {

@@ -1,7 +1,9 @@
 <?php
 
+use App\Controllers\Api\AuthorController;
 use App\Controllers\Api\BookController;
 use App\Controllers\Api\BookVoteController;
+use App\Controllers\Api\CategoryController;
 use Dotenv\Dotenv;
 
 require __DIR__ . '/../vendor/autoload.php';
@@ -37,14 +39,16 @@ $method = $_SERVER['REQUEST_METHOD'];
     }else if ($route === 'delete' && $method === 'POST') {
         $bookController = new BookController();
         $bookController->deleteBook();
+
     //   *** Authors ***
     } else if ($route === 'authors') {
-        $bookController = new BookController();
-        $bookController->getAuthors();
+        $authorController = new AuthorController();
+        $authorController->getAuthors();
+
     //   ***Categories***
     } else if ($route === 'categories') {
-        $bookController = new BookController();
-        $bookController->getCategories();
+        $categoryController = new CategoryController();
+        $categoryController->getCategories();
     }
 
     else if ($route === 'votes')

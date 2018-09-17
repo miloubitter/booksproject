@@ -67,18 +67,6 @@ class BookController extends BaseController
 
     }
 
-    public function getCategories() {
-        $bookModel = new Category();
-        $books = $bookModel->categories();
-        $this->renderJson(200, $books);
-    }
-
-    public function getAuthors() {
-        $bookModel = new Author();
-        $books = $bookModel->authors();
-        $this->renderJson(200, $books);
-    }
-
     public function deleteBook() {
         $id = $_GET['id'] ?? null;
         $bookModel = new Book();
