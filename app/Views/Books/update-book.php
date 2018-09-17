@@ -37,6 +37,8 @@
 
     <script>
         let bookId = <?php echo $viewModel['book']['id']?>;
+        let categoryId = <?php echo $viewModel['book']['category_id']?>;
+        let authorId = <?php echo $viewModel['book']['author_id']?>;
     </script>
     <script src="js/update-book.js"></script>
 </div>

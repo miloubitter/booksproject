@@ -27,13 +27,11 @@ class BookController extends BaseController
 
     public function showContact()
     {
-        $book = new Book();
         $author = new Author();
         $category = new Category();
 
         $viewModel = [
             'pageTitle' => "Contact",
-            'books' => $book->all(),
             'authors' => $author->authors(),
             'categories'=> $category->categories(),
             'errors' => $this->getErrors(),

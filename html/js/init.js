@@ -84,13 +84,12 @@ const appendSuccessMessage = (message, elementSelector) => {
 
 function upVote(id){
     $.ajax ({
-        url: "http://localhost/booksproject/api/?route=votes&id=" + id,
+        url: env.api + "?route=votes&id=" + id,
         type: "POST"
     }).done(function (data) {
         if (data) {
             response= $.parseJSON(data);
-            votes = response.votes;
-            $(".vote-count").html(votes);
+            $(".vote-count").html(response);
         }
 
     });
@@ -98,13 +97,12 @@ function upVote(id){
 
 function downVote(id){
     $.ajax ({
-        url: "http://localhost/booksproject/api/?route=votes&id=" + id,
+        url: env.api + "?route=votes&id=" + id,
         type: "DELETE"
     }).done(function (data) {
         if (data) {
             response= $.parseJSON(data);
-            votes = response.votes;
-            $(".vote-count").html(votes);
+            $(".vote-count").html(response);
         }
 
     });
@@ -112,13 +110,12 @@ function downVote(id){
 
 function getVotes(id){
     $.ajax ({
-        url: "http://localhost/booksproject/api/?route=votes&id=" + id,
+        url: env.api + "?route=votes&id=" + id,
         type: "GET"
     }).done(function (data) {
         if (data) {
             response= $.parseJSON(data);
-            votes = response.votes;
-            $(".vote-count").html(votes);
+            $(".vote-count").html(response);
         }
 
     });
@@ -129,7 +126,7 @@ $( document ).ready(function() {
     if (voteElement){
         let bookId = $(voteElement).find(".vote-count").data("id");
         if (bookId>0){
-            //setInterval("getVotes(" + bookId +")",1000);
+            // setInterval("getVotes(" + bookId +")",1000);
             $(voteElement).find(".up-vote").click(function (){
                 upVote(bookId);
             });

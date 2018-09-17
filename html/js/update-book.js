@@ -68,10 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
             authorSelectField.setAttribute('class', 'updateTextField');
 
             for (i = 0; i < authors.length; i++) {
-                let authorSelect = document.createElement('option');
-                authorSelect.textContent = authors[i].name;
-                authorSelect.setAttribute('value', authors[i].id);
-                authorSelectField.appendChild(authorSelect);
+                let authorOption = document.createElement('option');
+                authorOption.textContent = authors[i].name;
+                authorOption.setAttribute('value', authors[i].id);
+                if(parseInt(authors[i].id) === authorId){
+                    authorOption.setAttribute('selected', 'selected');
+                }
+                authorSelectField.appendChild(authorOption);
             }
 
             authorRow.appendChild(authorSelectField);
@@ -96,6 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 let categorySelect = document.createElement('option');
                 categorySelect.textContent = categories[i].name;
                 categorySelect.setAttribute('value', categories[i].id);
+                if(parseInt(categories[i].id) === categoryId){
+                    categorySelect.setAttribute('selected', 'selected');
+                }
                 categorySelectField.appendChild(categorySelect);
             }
 

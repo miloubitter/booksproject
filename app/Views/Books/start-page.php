@@ -25,7 +25,7 @@
 
 <div class="container">
     <div class="intro border border-info">
-        <h1>Wecome on the webpage for the online bookstore </h1> <br />
+        <h1>Welcome on the webpage for the online bookstore </h1> <br />
             <p>There is so much to see on this website. We have a large various collection of books. <br /> Have fun reading. </p> <br /><br /><br />
     </div>
 
