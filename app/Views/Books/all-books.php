@@ -8,7 +8,7 @@
 <div class="container">
     <div class="row">
         <div class="col">
-            <div class="scrollable">
+            <div>
                 <table class="table">
                     <thead class="thead-light">
                     <tr>
