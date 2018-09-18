@@ -31,9 +31,10 @@ Zodra er op 1 categorie geklikt word kom je op een pagina waar een korte uitleg 
 - Om te beginnen moet je deze repository clonen / downloaden. 
 
 - Ga naar de www folder van de computer, maak hier een nieuwe map aan en plaats de bestanden in die map.
-- Begin met het installeren van composer in de terminal:
-```php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
-php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
-php composer-setup.php
-php -r "unlink('composer-setup.php');"
-```
+- Zorg dat composer geinstalleerd is op de computer.
+- Hierna moeten de packages geinstalleerd worden. Typ dit in de command-line:
+```composer.install```
+- Maak een nieuwe database aan en importeer de bestanden uit:
+```sql/Books.sql```
+- Maak nu een kopie van het bestand .env-example, noem deze .env en typ daar jou gegevens in.
+- Maak ook een kopie van het bestand .envoirement-settings-example, noem deze .envoirement-settings en typ daar jou gegevens in.
