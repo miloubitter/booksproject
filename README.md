@@ -9,6 +9,7 @@ Dit was een opdracht die ik heb uitgevoerd in de php full-stack bootcamp van You
   * Het verwijderen van een bestaand boek.
 - Op de hoofdpagina is een top 5 te zien van boeken, gebaseerd op de hoeveelheid gegeven votes. 
 Als je daarop klikt kom je bij de detailpagina van het boek.
+
 - Als in het menu op 'Books' wordt geklikt is daar een tabel te zien met alle boeken in de database. 
 Als op een boek geklikt wordt kom je terecht bij de detailpagina van de boeken, daar worden alle details van het boek zichtbaar.
 Hier kunnen ook foto's toegevoegd worden aan de boeken die opgeslagen worden in de database.
@@ -21,11 +22,18 @@ Zodra er op 1 categorie geklikt word kom je op een pagina waar een korte uitleg 
 
 ## Technische requirements
 - Er is gebruik gemaakt van HTML, CSS, SCSS, Bootstrap en JavaScript 
+
 - PHP als back-end taal, OOP
 - Er is gewerkt met het Model, View, Controller (MVC) systeem.
 - MySQL als database voor opslag van de boeken en gerelateerde informatie
 
+## Installeren 
+- Om te beginnen moet je deze repository clonen / downloaden. 
 
-
-
-	Als de reguliere blogs op http://localhost/blog te vinden zijn, dan is het bewerk gedeelte te vinden onder http://localhost/blog/admin
+- Ga naar de www folder van de computer, maak hier een nieuwe map aan en plaats de bestanden in die map.
+- Begin met het installeren van composer in de terminal:
+```php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('SHA384', 'composer-setup.php') === '544e09ee996cdf60ece3804abc52599c22b1f40f4323403c44d44fdfdd586475ca9813a858088ffbc1f233e9b180f061') { echo 'Installer verified'; } else { echo 'Installer corrupt'; unlink('composer-setup.php'); } echo PHP_EOL;"
+php composer-setup.php
+php -r "unlink('composer-setup.php');"
+```
