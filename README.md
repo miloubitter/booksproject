@@ -19,7 +19,7 @@ Zodra er op 1 auteur geklikt word kom je op een pagina waar de biografie van de 
 - Als in het navigatiemenu geklikt wordt op 'Categories' wordt een dropdown menu weergegeven met alle bestaande categorieën uit de database. 
 Zodra er op 1 categorie geklikt word kom je op een pagina waar een korte uitleg is van die categorie, ook worden alle boeken zichtbaar die in die categorie zitten.
 
-##Technische requirements
+## Technische requirements
 - Er is gebruik gemaakt van HTML, CSS, SCSS, Bootstrap en JavaScript 
 - PHP als back-end taal, OOP
 - Er is gewerkt met het Model, View, Controller (MVC) systeem.
