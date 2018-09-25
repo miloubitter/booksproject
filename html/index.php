@@ -17,10 +17,6 @@ $dotenv->load();
 set_exception_handler('Infrastructure\ErrorHandler::handleExceptions');
 set_error_handler('Infrastructure\ErrorHandler::handleErrors');
 
-function view($view, $viewModel){
-    include __DIR__ . '/../app/Views/layout.php';
-}
-
 $route = $_GET['route']??'index';
 $id =$_GET['id']??null;
 $method = $_SERVER['REQUEST_METHOD'];

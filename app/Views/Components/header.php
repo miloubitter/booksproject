@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset ="utf-8">
-    <title>Milou's Bookstore</title>
+    <title>Bookstore</title>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -19,7 +19,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-sm fixed-top ">
-    <a class="headerlogo navbar-brand " href="?route=index">Milou's Bookstore</a>
+    <a class="headerlogo navbar-brand " href="?route=index">Bookstore</a>
     <button class="navbar-toggler text-white" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span><i class="fas fa-bars navbar-white"></i></span>
     </button>
