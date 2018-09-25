@@ -4,8 +4,6 @@ namespace App\Controllers\Api;
 
 
 use App\Controllers\BaseController;
-use App\Models\Author;
-use App\Models\Book;
 use App\Models\Category;
 
 class CategoryController extends BaseController

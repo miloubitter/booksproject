@@ -20,21 +20,6 @@
                         <th scope="col">Price</th>
                     </tr>
                     </thead>
-
-                <?php
-                //    foreach($viewModel['books'] as $id=>$book){
-                //        echo "
-                //        <tr onclick=\"window.location = '?route=show&id={$book['id']}'\">
-                //            <td>{$book['title']}</a></td>
-                //            <td class=\"d-none d-sm-table-cell\">{$book['author_id']}</td>
-                //            <td class=\"d-none d-sm-table-cell\">{$book['isbn']}</td>
-                //            <td>{$book['price']}</td>
-                //        </tr>
-                //        ";
-                //    }
-                //
-                //    ?>
-
                 </table>
             </div>
 
@@ -49,4 +34,4 @@
     </div>
 </div>
 
-<script src="js/listing.js"
+<script src="js/listing.js"></script>

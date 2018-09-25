@@ -30,7 +30,7 @@ class CategoryController extends BaseController
 
         ];
 
-        view('/Books/categories', $viewModel);
+        $this->renderWebView('/Books/categories', $viewModel);
     }
 
     public function oneCategory($id = 0)
@@ -52,7 +52,7 @@ class CategoryController extends BaseController
 
         ];
 
-        view('/Books/category', $viewModel);
+        $this->renderWebView('/Books/category', $viewModel);
     }
 
 }

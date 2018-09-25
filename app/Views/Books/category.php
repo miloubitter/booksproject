@@ -19,7 +19,6 @@
     <h2 class="mb-3">All books in the category <?php echo $viewModel['category']['name']; ?></h2>
 
     <?php
-//    print_r($viewModel); exit;
     foreach ($viewModel['books'] as $id=> $book) { ?>
 
         <article class="mb-5">

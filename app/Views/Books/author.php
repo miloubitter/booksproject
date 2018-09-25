@@ -27,7 +27,6 @@
      <h2>Books written by <?php echo $viewModel['author']['name'] ?></h2>
 
         <?php
-//        print_r($viewModel); exit;
         foreach ($viewModel['books'] as $id => $author) { ?>
 
             <article class="mb-5">
@@ -51,32 +50,6 @@
             <hr>
 
         <?php } ?>
-
-<!--         --><?php
-//        print_r($viewModel); exit;
-//        foreach ($viewModel['books'] as $id => $author) { ?>
-<!---->
-<!--            <article class="mb-5">-->
-<!---->
-<!--                <h3><a href="?route=show&id=--><?php //echo $author['id'] ?><!--" class="linkDetail">--><?php //echo $author['title']; ?><!--</a></h3>-->
-<!--                <p>-->
-<!--                    <a href="?route=categoryDetailsShow&id=--><?php //echo $author['category_id'] ?><!--" class="intro linkCategory">--><?php //echo $author['category_name'] ?><!--</a>-->
-<!--                </p>-->
-<!--                --><?php //if ($author['image_filename']) { ?>
-<!--                    <div class="mb-3">-->
-<!--                        <div>-->
-<!--                            <img class="imagesTable" src="images/--><?php //echo $author['image_filename']?><!--">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <p>--><?php //echo $author['intro']?>
-<!--                        <a href="?route=show&id=--><?php //echo $author['id']?><!--" class="linkDetail">Click to read more...</a>-->
-<!--                    </p>-->
-<!--                --><?php //} ?><!-- <br />-->
-<!---->
-<!--            </article>-->
-<!--            <hr>-->
-<!---->
-<!--        --><?php //} ?>
      </div>
     </div>
 </div>

@@ -5,9 +5,7 @@ namespace App\Controllers\Web;
 
 use App\Controllers\BaseController;
 use App\Models\Author;
-use App\Models\Book;
 use App\Models\Category;
-use Gumlet\ImageResize;
 use Infrastructure\Authentication;
 
 class ContactController extends BaseController
