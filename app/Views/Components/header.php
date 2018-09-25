@@ -38,7 +38,7 @@
                     Authors
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <?php foreach ($viewModel['authors'] as $lol => $author){?>
+                    <?php foreach ($viewModel['authors'] as $author){?>
                         <a class="dropdown-item lower" href="?route=authorDetailsShow&id=<?php echo $author['id']?>"><?php echo $author['name']?></a>
                     <?php } ?>
                 </div>
