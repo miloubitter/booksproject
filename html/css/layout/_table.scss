@@ -17,13 +17,19 @@ table {
 .book-listing{
   margin-top: 50px;
   width: 1000px;
-  //border-spacing: 0;
+  th{
+    text-align: left;
+    border-bottom: solid 1px #555555;
+  }
+  th, td{
+    padding: 10px;
+  }
 }
-.book-listing th{
-  text-align: left;
-  border-bottom: solid 1px #555555;
-}
-
-.book-listing th, td{
-  padding: 10px;
-}
+//.book-listing th{
+//  text-align: left;
+//  border-bottom: solid 1px #555555;
+//}
+//
+//.book-listing th, td{
+//  padding: 10px;
+//}

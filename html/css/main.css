@@ -131,13 +131,11 @@ table .tablerow:hover {
   margin-top: 50px;
   width: 1000px;
 }
-
 .book-listing th {
   text-align: left;
   border-bottom: solid 1px #555555;
 }
-
-.book-listing th, td {
+.book-listing th, .book-listing td {
   padding: 10px;
 }
 

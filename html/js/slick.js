@@ -1,7 +1,10 @@
+$(document).ready(() => {
 
-$('.slides').slick({
+    $('.slides').slick({
     fade: true,
     autoplay: true,
     autoplaySpeed: 4000,
     arrows: false
+    });
+
 });

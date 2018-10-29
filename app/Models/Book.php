@@ -10,7 +10,7 @@ class Book extends Database
     public $sort_column = [];
     public $sort_direction = [];
 
-    public function all($where = [], $group_by = [], $order_by = [], $start_row = [], $limit = 1)
+    public function all()
     {
             $sql = "SELECT
                     books.id as id,
@@ -86,6 +86,7 @@ class Book extends Database
         $parameters = ['id' => $categoryId];
         return $this->getAll($sql, $parameters);
     }
+
     public function one($id = 0)
     {
         return $this->getOne("  SELECT 

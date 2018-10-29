@@ -25,7 +25,6 @@ $method = $_SERVER['REQUEST_METHOD'];
 if($route == 'index') {
     $bookController = new BookController();
     $bookController->index();
-   
 } else if($route == 'allbooks') {
     $bookController = new BookController();
     $bookController->allBooks();
@@ -39,15 +38,12 @@ if($route == 'index') {
 } else if($route == 'show' && $method=='GET') {
     $bookController = new BookController();
     $bookController->show($id);
-    
 } else if($route == 'edit' && $method=='GET') {
     $bookController = new BookController();
     $bookController->edit($id);
-
 }else if($route == 'create' && $method=='GET') {
     $bookController = new BookController();
     $bookController->create();
-
 } else if ($route == "upload-image" && $method == "POST") {
     $bookController = new BookController();
     $bookController->uploadImage($id);
@@ -66,11 +62,9 @@ if($route == 'index') {
 } elseif ($route == "login" && $method == "GET") {
     $loginController = new Logincontroller();
     $loginController->show();
-
 } elseif ($route == "login" && $method == "POST") {
     $loginController = new Logincontroller();
     $loginController->login();
-
 } elseif ($route == "logout") {
     $loginController = new Logincontroller();
     $loginController->logout();

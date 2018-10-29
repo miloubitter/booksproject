@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             authorSelectField.setAttribute('name', 'author');
             authorSelectField.setAttribute('class', 'newTextField');
 
-            for (i = 0; i < authors.length; i++) {
+            for (let i = 0; i < authors.length; i++) {
                 let authorSelect = document.createElement('option');
                 authorSelect.textContent = authors[i].name;
                 authorSelect.setAttribute('value', authors[i].id);
@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
             categorySelectField.setAttribute('name', 'category');
             categorySelectField.setAttribute('class', 'newTextField');
 
-            for (i = 0; i < categories.length; i++) {
+            for (let i = 0; i < categories.length; i++) {
                 let categorySelect = document.createElement('option');
                 categorySelect.textContent = categories[i].name;
                 categorySelect.setAttribute('value', categories[i].id);

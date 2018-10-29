@@ -23,6 +23,7 @@
                                 <span class="vote-count" style="font-weight: bold" data-id=" <?php echo $viewModel['book']['id']?>"><?php echo $viewModel['book']['votes']?></span> readers liked this book <br/>
                             </div>
                         </div>
+                    <br/>
 
                         <?php if ($viewModel['profile']) { ?>
                             <!-- Image upload on page     -->

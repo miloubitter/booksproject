@@ -19,53 +19,54 @@ set_error_handler('Infrastructure\ErrorHandler::handleErrors');
 $route = $_GET['route'] ?? 'index';
 $id = $_GET['id'] ?? null;
 $method = $_SERVER['REQUEST_METHOD'];
-    // *** Books ***
-    if ($route === 'books' && $method === 'GET') {
-        $bookController = new BookController();
-        $bookController->getBooks();
 
-    } else if ($route === 'book' && $method === 'GET') {
-        $bookController = new BookController();
-        $bookController->getOneBook();
+// *** Books ***
+if ($route === 'books' && $method === 'GET') {
+    $bookController = new BookController();
+    $bookController->getBooks();
 
-    } else if ($route === 'books' && $method === 'POST') {
-        $bookController = new BookController();
-        $bookController->createBook();
+} else if ($route === 'book' && $method === 'GET') {
+    $bookController = new BookController();
+    $bookController->getOneBook();
 
-    }else if ($route === 'update' && $method === 'POST') {
-        $bookController = new BookController();
-        $bookController->updateBook();
+} else if ($route === 'books' && $method === 'POST') {
+    $bookController = new BookController();
+    $bookController->createBook();
 
-    }else if ($route === 'delete' && $method === 'POST') {
-        $bookController = new BookController();
-        $bookController->deleteBook();
+}else if ($route === 'update' && $method === 'POST') {
+    $bookController = new BookController();
+    $bookController->updateBook();
 
-    //   *** Authors ***
-    } else if ($route === 'authors') {
-        $authorController = new AuthorController();
-        $authorController->getAuthors();
+}else if ($route === 'delete' && $method === 'POST') {
+    $bookController = new BookController();
+    $bookController->deleteBook();
 
-    //   ***Categories***
-    } else if ($route === 'categories') {
-        $categoryController = new CategoryController();
-        $categoryController->getCategories();
-    }
+//   *** Authors ***
+} else if ($route === 'authors') {
+    $authorController = new AuthorController();
+    $authorController->getAuthors();
 
-    else if ($route === 'votes')
+//   ***Categories***
+} else if ($route === 'categories') {
+    $categoryController = new CategoryController();
+    $categoryController->getCategories();
+}
+
+else if ($route === 'votes')
+{
+    $bookVoteController = new BookVoteController();
+    if ($method === 'GET')
     {
-        $bookVoteController = new BookVoteController();
-        if ($method === 'GET')
-        {
-            $bookVoteController->show($id);
-        }
-        else if ($method === 'POST')
-        {
-            $bookVoteController->store($id);
-        }
-        else if ($method === 'DELETE')
-        {
-            $bookVoteController->destroy($id);
-        }
+        $bookVoteController->show($id);
     }
+    else if ($method === 'POST')
+    {
+        $bookVoteController->store($id);
+    }
+    else if ($method === 'DELETE')
+    {
+        $bookVoteController->destroy($id);
+    }
+}
 
 

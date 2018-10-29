@@ -1,6 +1,6 @@
 <div class="jumbotron jumbotron-fluid my-5">
     <div class="container pt-4">
-        <h1 class="display-4 texth1 text-center">Book Catalog</h1>
+        <h1 class="display-4 texth1 text-center">Book Cataloggg</h1>
         <p class="lead textP text-center">Welcome to the book catalog. <br /> Click on the books to see their details!.</p>
     </div>
 </div>
