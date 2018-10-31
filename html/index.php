@@ -5,7 +5,7 @@ use App\Controllers\Web\BookController;
 use App\Controllers\Web\CategoryController;
 use App\Controllers\Web\ContactController;
 use App\Controllers\Web\LoginController;
-use App\Models\Entities\User;
+use App\Controllers\Web\RegistrationController;
 use Dotenv\Dotenv;
 use Repositories\UserRepository;
 
@@ -22,6 +22,8 @@ set_error_handler('Infrastructure\ErrorHandler::handleErrors');
 $route = $_GET['route']??'index';
 $id =$_GET['id']??null;
 $method = $_SERVER['REQUEST_METHOD'];
+//$route = 'register-user';
+//$method = 'POST';
 
 // ****** Main routes ******
 if($route == 'index') {
@@ -65,13 +67,20 @@ if($route == 'index') {
     $userRepository = new UserRepository();
     $loginController = new Logincontroller($userRepository);
     $loginController->show();
+
 } else if ($route == "login" && $method == "POST") {
     $userRepository = new UserRepository();
     $loginController = new Logincontroller($userRepository);
     $loginController->login();
+
 } else if ($route == "logout") {
     $userRepository = new UserRepository();
     $loginController = new Logincontroller($userRepository);
     $loginController->logout();
+
+} else if ($route == 'register-user' && $method == "POST") {
+    $userRepository = new UserRepository();
+    $registrationController = new RegistrationController($userRepository);
+    $registrationController->registerUser();
 }
 

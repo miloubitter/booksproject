@@ -85,7 +85,33 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
     public function save(User $user) : void
     {
+        // Update
+        if ($user->getId()) {
 
+        } // Create
+        else {
+            $query = " INSERT 
+                       INTO 
+                            users (
+                            email, 
+                            `hash`, 
+                            firstname, 
+                            lastname) 
+                       VALUES (
+                            :email,
+                            :hash,
+                            :firstname,
+                            :lastname
+                            )";
+            $parameters = [
+                'email' => $user->getEmail(),
+                'hash' => $user->getHash(),
+                'firstname' => $user->getFirstName(),
+                'lastname' => $user->getLastName()
+            ];
+
+            $this->execute($query, $parameters);
+        }
     }
 
     private function createUserObject($userData) :User

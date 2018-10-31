@@ -14,7 +14,7 @@ class User
     private $lastLogin;
 
 
-    public function getId() : int
+    public function getId() : ?int
     {
         return $this->id;
     }
