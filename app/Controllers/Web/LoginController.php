@@ -7,9 +7,18 @@ use App\Models\Author;
 use App\Models\Category;
 use App\Models\Entities\User;
 use Infrastructure\Authentication;
+use Repositories\UserRepository;
 
 class LoginController extends BaseController
 {
+    private $userRepository;
+
+    public function __construct(UserRepository $userRepository)
+    {
+        parent::__construct();
+        $this->userRepository = $userRepository;
+    }
+
     public function show() : void
     {
         $author = new Author();
@@ -35,7 +44,7 @@ class LoginController extends BaseController
         $password = $_POST['password'] ?? '';
 
         /** @var User $user */
-        $user = $userRepository->login()($username, $password);
+        $user = $this->userRepository->login()($username, $password);
 
         if ($user) {
             $_SESSION['profile'] = array(

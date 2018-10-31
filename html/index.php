@@ -6,6 +6,7 @@ use App\Controllers\Web\CategoryController;
 use App\Controllers\Web\ContactController;
 use App\Controllers\Web\LoginController;
 use Dotenv\Dotenv;
+use Repositories\UserRepository;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -59,13 +60,14 @@ if($route == 'index') {
     $categoryController->oneCategory($id);
 
 //    ****** Login ******
-} elseif ($route == "login" && $method == "GET") {
-    $loginController = new Logincontroller();
+} else if ($route == "login" && $method == "GET") {
+    $userRepository = new UserRepository();
+    $loginController = new Logincontroller($userRepository);
     $loginController->show();
-} elseif ($route == "login" && $method == "POST") {
+} else if ($route == "login" && $method == "POST") {
     $loginController = new Logincontroller();
     $loginController->login();
-} elseif ($route == "logout") {
+} else if ($route == "logout") {
     $loginController = new Logincontroller();
     $loginController->logout();
 }
