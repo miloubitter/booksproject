@@ -7,7 +7,6 @@ use App\Models\Author;
 use App\Models\Category;
 use App\Models\Entities\User;
 use App\Models\Interfaces\UserRepositoryInterface;
-use Infrastructure\Authentication;
 
 class LoginController extends BaseController
 {
