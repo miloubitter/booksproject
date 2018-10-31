@@ -6,14 +6,14 @@ use App\Controllers\BaseController;
 use App\Models\Author;
 use App\Models\Category;
 use App\Models\Entities\User;
+use App\Models\Interfaces\UserRepositoryInterface;
 use Infrastructure\Authentication;
-use Repositories\UserRepository;
 
 class LoginController extends BaseController
 {
     private $userRepository;
 
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepositoryInterface $userRepository)
     {
         parent::__construct();
         $this->userRepository = $userRepository;
@@ -40,11 +40,16 @@ class LoginController extends BaseController
 
     public function login() : void
     {
+        $user = $this->userRepository->getUser(1);
+        echo $user->getFirstName();
+//        var_dump($user);
+        exit;
+
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
 
         /** @var User $user */
-        $user = $this->userRepository->login()($username, $password);
+        $user = $this->userRepository->login($username, $password);
 
         if ($user) {
             $_SESSION['profile'] = array(

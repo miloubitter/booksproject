@@ -80,7 +80,7 @@ class User
         return $this;
     }
 
-    public function getLastLogin() : DateTime
+    public function getLastLogin() : ?DateTime
     {
         return $this->lastLogin;
     }

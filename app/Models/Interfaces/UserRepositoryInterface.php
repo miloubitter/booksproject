@@ -11,4 +11,6 @@ interface UserRepositoryInterface
     public function getAllUsers() : array;
 
     public function login(string $email, string $password) : ?User;
+
+    public function save(User $user) : void;
 }

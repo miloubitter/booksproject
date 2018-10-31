@@ -5,6 +5,7 @@ use App\Controllers\Web\BookController;
 use App\Controllers\Web\CategoryController;
 use App\Controllers\Web\ContactController;
 use App\Controllers\Web\LoginController;
+use App\Models\Entities\User;
 use Dotenv\Dotenv;
 use Repositories\UserRepository;
 
@@ -65,10 +66,12 @@ if($route == 'index') {
     $loginController = new Logincontroller($userRepository);
     $loginController->show();
 } else if ($route == "login" && $method == "POST") {
-    $loginController = new Logincontroller();
+    $userRepository = new UserRepository();
+    $loginController = new Logincontroller($userRepository);
     $loginController->login();
 } else if ($route == "logout") {
-    $loginController = new Logincontroller();
+    $userRepository = new UserRepository();
+    $loginController = new Logincontroller($userRepository);
     $loginController->logout();
 }
 
