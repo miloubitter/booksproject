@@ -5,6 +5,7 @@ namespace App\Controllers\Web;
 use App\Controllers\BaseController;
 use App\Models\Author;
 use App\Models\Category;
+use App\Models\Entities\User;
 use Infrastructure\Authentication;
 
 class LoginController extends BaseController
@@ -33,7 +34,16 @@ class LoginController extends BaseController
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
 
-        if (Authentication::login($username,$password)) {
+        /** @var User $user */
+        $user = $userRepository->login()($username, $password);
+
+        if ($user) {
+            $_SESSION['profile'] = array(
+                'userId' => $user->getId(),
+                'userName' => $user->getEmail(),
+                'userFullName' => $user->getFullName()
+            );
+
             header('Location: ?route=index');
         }
         else {

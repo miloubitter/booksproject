@@ -49,7 +49,7 @@ class User
 
     public function getFirstName() : string
     {
-        return $this->firstName;
+        return ucfirst($this->firstName);
     }
 
     public function setFirstName(string $firstName): self
@@ -60,7 +60,7 @@ class User
 
     public function getLastName() : string
     {
-        return $this->lastName;
+        return ucfirst($this->lastName);
     }
 
     public function setLastName(string $lastName): self
@@ -91,5 +91,8 @@ class User
         return $this;
     }
 
-
+    public function getFullName() : string
+    {
+        return $this->getFirstName() . ' ' .  $this->getLastName();
+    }
 }
