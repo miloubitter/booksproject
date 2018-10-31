@@ -23,11 +23,7 @@ class CategoryController extends BaseController
             'categories'=> $category->categories(),
             'books' => $book->all(),
             'authors' => $author->authors(),
-            'category' => $category->getCategoryById($id),
-            'errors' => $this->getErrors(),
-            'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
-
+            'category' => $category->getCategoryById($id)
         ];
 
         $this->renderWebView('/Books/categories', $viewModel);
@@ -45,11 +41,7 @@ class CategoryController extends BaseController
             'categories'=> $category->categories(),
             'category' => $category->getCategoryById($id),
             'books' => $book->getAllBooksByCategory($id),
-            'authors' => $author->authors(),
-            'errors' => $this->getErrors(),
-            'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
-
+            'authors' => $author->authors()
         ];
 
         $this->renderWebView('/Books/category', $viewModel);

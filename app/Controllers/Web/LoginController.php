@@ -27,10 +27,7 @@ class LoginController extends BaseController
         $viewModel = [
             'pageTitle' => 'Login',
             'authors' => $author->authors(),
-            'categories'=> $category->categories(),
-            'errors' => $this->getErrors(),
-            'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
+            'categories'=> $category->categories()
         ];
 
         unset($_SESSION['error']);
@@ -63,7 +60,15 @@ class LoginController extends BaseController
 
     public function logout() : void
     {
-        Authentication::logout();
+        session_destroy();
         header('Location: ?route=index');
+    }
+
+    public static function isLoggedIn(){
+        return isset($_SESSION['profile']);
+    }
+
+    public static function getProfile(){
+        return $_SESSION['profile'] ?? null;
     }
 }

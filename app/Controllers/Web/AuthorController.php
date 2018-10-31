@@ -23,10 +23,7 @@ class AuthorController extends BaseController
             'author' => $author->oneAuthor($id),
             'books' => $book->getAllBooksByAuthor($id),
             'authors' => $author->authors(),
-            'categories'=> $category->categories(),
-            'errors' => $this->getErrors(),
-            'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
+            'categories'=> $category->categories()
         ];
 
         $this->renderWebView('/Books/author', $viewModel);

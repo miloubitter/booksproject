@@ -19,10 +19,7 @@ class ContactController extends BaseController
         $viewModel = [
             'pageTitle' => "Contact",
             'authors' => $author->authors(),
-            'categories'=> $category->categories(),
-            'errors' => $this->getErrors(),
-            'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
+            'categories'=> $category->categories()
         ];
 
         $this->renderWebView('/Books/contact', $viewModel);

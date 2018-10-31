@@ -35,10 +35,7 @@ class BookController extends BaseController
             'pageTitle' => "Book Catalog",
             'authors' => $author->authors(),
             'categories'=> $category->categories(),
-            'books' => $book->getTopFiveBooks(),
-            'errors' => $this->getErrors(),
-            'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
+            'books' => $book->getTopFiveBooks()
         ];
 
         $this->renderWebView('/Books/start-page', $viewModel);
@@ -54,10 +51,7 @@ class BookController extends BaseController
             'pageTitle' => "Book Catalog",
             'books' => $book->all(),
             'authors' => $author->authors(),
-            'categories'=> $category->categories(),
-            'errors' => $this->getErrors(),
-            'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile()
+            'categories'=> $category->categories()
         ];
 
         $this->renderWebView('/Books/all-books', $viewModel);
@@ -77,11 +71,8 @@ class BookController extends BaseController
         $viewModel = [
             'pageTitle' => "Books",
             'book' => $book->one($id),
-            'errors' => $this->getErrors(),
             'authors' => $author->authors(),
             'categories'=> $category->categories(),
-            'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile(),
             'imagePath' => $imagePath
         ];
 
@@ -97,10 +88,7 @@ class BookController extends BaseController
             'pageTitle' => "Edit book",
             'book' => $book->one($id),
             'authors' => $author->authors(),
-            'categories'=> $category->categories(),
-            'errors' => $this->getErrors(),
-            'messages' => $this->getMessages(),
-            'profile' => Authentication::getProfile(),
+            'categories'=> $category->categories()
         ];
 
 
@@ -115,10 +103,7 @@ class BookController extends BaseController
         $viewModel = [
                 'pageTitle' => "Create a book",
                 'authors' => $author->authors(),
-                'categories'=> $category->categories(),
-                'errors' => $this->getErrors(),
-                'messages' => $this->getMessages(),
-                'profile' => Authentication::getProfile()
+                'categories'=> $category->categories()
             ];
 
         $this->renderWebView('/Books/new-book', $viewModel);
