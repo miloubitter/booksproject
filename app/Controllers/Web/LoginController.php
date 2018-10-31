@@ -40,11 +40,6 @@ class LoginController extends BaseController
 
     public function login() : void
     {
-        $user = $this->userRepository->getUser(1);
-        echo $user->getFirstName();
-//        var_dump($user);
-        exit;
-
         $username = $_POST['username'] ?? '';
         $password = $_POST['password'] ?? '';
 

@@ -38,12 +38,49 @@ class UserRepository extends BaseRepository implements UserRepositoryInterface
 
     public function getAllUsers() : array
     {
+        $query = "SELECT 
+                    id,
+                    email,
+                    firstname,
+                    lastname,
+                    created,
+                    lastlogin
+                  FROM 
+                  users
+                  ";
 
+        $userDatas = $this->getAll($query);
+        $userArray = [];
+
+        foreach ($userDatas as $data){
+           $userArray[] =  $this->createUserObject($data);
+        }
+        return $userArray;
     }
 
     public function login(string $email, string $password) : ?User
     {
+        $query = "SELECT 
+                    *
+                  FROM 
+                    users
+                  WHERE
+                    email = :email 
+        ";
 
+        $parameters = [
+            'email' => $email
+        ];
+
+        $userData = $this->getOne($query, $parameters);
+
+        if ($userData){
+            if (password_verify($password, $userData['hash']) === true){
+                return $this->createUserObject($userData);
+            }
+        }
+
+        return null;
     }
 
     public function save(User $user) : void
