@@ -5,7 +5,9 @@ use App\Controllers\Web\BookController;
 use App\Controllers\Web\CategoryController;
 use App\Controllers\Web\ContactController;
 use App\Controllers\Web\LoginController;
+use App\Models\Entities\User;
 use Dotenv\Dotenv;
+use Repositories\UserRepository;
 
 require __DIR__ . '/../vendor/autoload.php';
 
@@ -59,14 +61,17 @@ if($route == 'index') {
     $categoryController->oneCategory($id);
 
 //    ****** Login ******
-} elseif ($route == "login" && $method == "GET") {
-    $loginController = new Logincontroller();
+} else if ($route == "login" && $method == "GET") {
+    $userRepository = new UserRepository();
+    $loginController = new Logincontroller($userRepository);
     $loginController->show();
-} elseif ($route == "login" && $method == "POST") {
-    $loginController = new Logincontroller();
+} else if ($route == "login" && $method == "POST") {
+    $userRepository = new UserRepository();
+    $loginController = new Logincontroller($userRepository);
     $loginController->login();
-} elseif ($route == "logout") {
-    $loginController = new Logincontroller();
+} else if ($route == "logout") {
+    $userRepository = new UserRepository();
+    $loginController = new Logincontroller($userRepository);
     $loginController->logout();
 }
 

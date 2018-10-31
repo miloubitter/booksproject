@@ -56,6 +56,10 @@ button {
   background-color: #cccccc;
 }
 
+.alert {
+  margin-top: 70px;
+}
+
 .imagesTable {
   height: 140px;
   width: 100px;
