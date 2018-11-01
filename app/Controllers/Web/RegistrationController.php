@@ -7,7 +7,6 @@ use App\Models\Author;
 use App\Models\Category;
 use App\Models\Entities\User;
 use App\Models\Interfaces\UserRepositoryInterface;
-use Repositories\UserRepository;
 
 class RegistrationController extends BaseController
 {
@@ -21,10 +20,10 @@ class RegistrationController extends BaseController
 
     public function registerUser()
     {
-        $email = $_GET['email'];
-        $hash = password_hash($_GET['hash'], PASSWORD_DEFAULT);
-        $firstName = $_GET['firstname'];
-        $lastName = $_GET['lastname'];
+        $email = $_POST['username'];
+        $hash = password_hash($_POST['password'], PASSWORD_DEFAULT);
+        $firstName = $_POST['firstname'];
+        $lastName = $_POST['lastname'];
 
         $user = new User();
         $user->setEmail($email)
@@ -33,19 +32,21 @@ class RegistrationController extends BaseController
             ->setLastName($lastName);
 
         $this->userRepository->save($user);
+
+        $this->addMessage('User succesfully created! Try to login.');
+        header("Location: ?route=login");
+        exit;
     }
 
     public function newUser()
     {
         $author = new Author();
         $category = new Category();
-//        $register = new UserRepository();
 
         $viewModel = [
             'pageTitle' => 'Create a New User',
             'authors' => $author->authors(),
             'categories'=> $category->categories()
-//            'register' => $register->registerUser()
         ];
 
         unset($_SESSION['error']);

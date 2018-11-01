@@ -12,13 +12,13 @@
                 <div class="row">
                     <div class="col-xs-12 col-md-4">
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="email" class="form-control" />
+                            <label for="username">Email</label>
+                            <input type="text" name="username" id="username" class="form-control" />
                         </div>
 
                         <div class="form-group">
-                            <label for="hash">Password</label>
-                            <input type="password" name="hash" id="hash" class="form-control" />
+                            <label for="password">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" />
                         </div>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                 </div>
                 <br clear="all" />
 
-                <a class="btn btn-primary" href="?route=index" role="button">Create a new user</a>
+<!--                <a class="btn btn-primary" href="?route=index" role="button">Create a new user</a>-->
                 <button type="submit" class="btn btn-success">Create a new user</button>
 
 
