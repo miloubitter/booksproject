@@ -3,8 +3,11 @@
 namespace App\Controllers\Web;
 
 use App\Controllers\BaseController;
+use App\Models\Author;
+use App\Models\Category;
 use App\Models\Entities\User;
 use App\Models\Interfaces\UserRepositoryInterface;
+use Repositories\UserRepository;
 
 class RegistrationController extends BaseController
 {
@@ -18,10 +21,10 @@ class RegistrationController extends BaseController
 
     public function registerUser()
     {
-        $email = 'email@adres.nl';
-        $hash = password_hash('secret', PASSWORD_DEFAULT);
-        $firstName = 'Voornaam';
-        $lastName ='Achternaam';
+        $email = $_GET['email'];
+        $hash = password_hash($_GET['hash'], PASSWORD_DEFAULT);
+        $firstName = $_GET['firstname'];
+        $lastName = $_GET['lastname'];
 
         $user = new User();
         $user->setEmail($email)
@@ -30,6 +33,24 @@ class RegistrationController extends BaseController
             ->setLastName($lastName);
 
         $this->userRepository->save($user);
+    }
+
+    public function newUser()
+    {
+        $author = new Author();
+        $category = new Category();
+//        $register = new UserRepository();
+
+        $viewModel = [
+            'pageTitle' => 'Create a New User',
+            'authors' => $author->authors(),
+            'categories'=> $category->categories()
+//            'register' => $register->registerUser()
+        ];
+
+        unset($_SESSION['error']);
+
+        $this->renderWebView('/Login/new-user', $viewModel);
     }
 
 }

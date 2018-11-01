@@ -26,6 +26,8 @@
                 <br clear="all" />
 
                 <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Login</button>
+                <a class="btn btn-primary" href="?route=new-user" role="button">Create a new user</a>
+
             </form>
         </div>
     </div>

@@ -60,7 +60,7 @@ class LoginController extends BaseController
     public function logout() : void
     {
         session_destroy();
-        header('Location: ?route=index');
+        header('Location: ?route=login');
     }
 
     public static function isLoggedIn(){

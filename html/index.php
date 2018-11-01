@@ -82,5 +82,9 @@ if($route == 'index') {
     $userRepository = new UserRepository();
     $registrationController = new RegistrationController($userRepository);
     $registrationController->registerUser();
-}
 
+} else if ($route == 'new-user' && $method == "GET") {
+    $userRepository = new UserRepository();
+    $registrationController = new RegistrationController($userRepository);
+    $registrationController->newUser();
+}
